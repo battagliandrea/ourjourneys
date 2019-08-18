@@ -6,11 +6,15 @@ class Poi implements Convert<JsonPoi, Poi> {
   int id;
   String name;
   String address;
+  double lat;
+  double long;
 
   Poi(JsonPoi fromModel) {
     id = fromModel.id;
     name = fromModel.name;
     address = fromModel.address;
+    lat = fromModel.coordinates.lat;
+    long = fromModel.coordinates.long;
   }
 
   @override
