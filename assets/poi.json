@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "name": "Posto 1",
+      "address": "Indirizzo posto 1"
+    },
+    {
+      "id": 2,
+      "name": "Posto 2",
+      "address": "Indirizzo posto 2"
+    },
+    {
+      "id": 3,
+      "name": "Posto 3",
+      "address": "Indirizzo posto 3"
+    }
+]
+
