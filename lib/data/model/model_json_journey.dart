@@ -6,5 +6,5 @@ class JsonJourney {
 
   String title;
 
-  List<JsonDay> poi;
+  List<JsonDay> days;
 }
