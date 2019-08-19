@@ -10,19 +10,18 @@ import 'package:our_journeys/presentation/model/model.dart';
 
 class JsonDataSource{
 
-  Future<List<Poi>> fetchJsonList() async {
+  Future<Journey> fetchJourney() async {
     try {
 
-      String testData = await DefaultAssetBundle.of(Injector.getContext()).loadString("assets/journey_amsterdam.json");
-      dynamic testDecoded = jsonDecode(testData);
+      String data = await DefaultAssetBundle.of(Injector.getContext()).loadString("assets/journey_amsterdam.json");
+      dynamic json = jsonDecode(data);
 
-      var journey = JourneyMapper.transformJourney(testDecoded);
-      return journey.days[0].poi;
+      return JourneyMapper.transformJourney(json);
 
     } on HttpException catch (e) {
-      return [];
+      return null;
     } catch (err) {
-      return [];
+      return null;
     }
   }
 

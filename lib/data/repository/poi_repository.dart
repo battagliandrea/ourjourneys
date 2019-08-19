@@ -6,6 +6,7 @@ import 'package:our_journeys/presentation/model/model.dart';
 
 abstract class PoiRepository {
   Future<List<Poi>> fetchPoi();
+  Future<List<Day>> fetchDays();
 }
 
 class PoiRepositoryImpl implements PoiRepository {
@@ -18,12 +19,23 @@ class PoiRepositoryImpl implements PoiRepository {
 
   @override
   Future<List<Poi>> fetchPoi() async {
-    List<Poi> poi = await jsonDataSource.fetchJsonList();
+    Journey journey = await jsonDataSource.fetchJourney();
 
-    if (poi.length > 0) {
-      return poi;
+    if (journey.days[0].poi.length > 0) {
+      return journey.days[0].poi;
     } else {
       return new List<Poi>();
+    }
+  }
+
+  @override
+  Future<List<Day>> fetchDays() async {
+    Journey journey = await jsonDataSource.fetchJourney();
+
+    if (journey.days.length > 0) {
+      return journey.days;
+    } else {
+      return new List<Day>();
     }
   }
 }

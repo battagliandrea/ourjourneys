@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:our_journeys/presentation/bloc/daylist/daylist.dart';
+import 'package:our_journeys/presentation/bloc/daylist/daylist_bloc.dart';
+import 'package:our_journeys/presentation/bloc/daylist/daylist_state.dart';
 import 'package:our_journeys/presentation/bloc/poilist/poilist.dart';
 import 'package:our_journeys/presentation/bloc/poilist/poilist_bloc.dart';
 import 'package:our_journeys/presentation/model/model.dart';
@@ -19,11 +22,13 @@ class _PoiListPageState extends State<PoiListPage> {
 
     final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
     final PoiBloc _postBloc = PoiBloc();
+    final DayBloc _dayBloc = DayBloc();
 
     @override
     void initState() {
         super.initState();
-        _postBloc.dispatch(Fetch());
+        _postBloc.dispatch(FetchPost());
+        _dayBloc.dispatch(FetchDays());
     }
 
     @override
@@ -79,12 +84,6 @@ class _PoiListPageState extends State<PoiListPage> {
     }
 
     Widget _buildRow(int index, Poi poi) {
-//        return new ListTile(
-//            title: new Text(
-//                "$index. ${poi.name}",
-//                style: _biggerFont,
-//            )
-//        );
       return new GestureDetector(
         onTap: () => {
           Navigator.push( context, MaterialPageRoute(builder: (context) => PoiDetailsPage()))
@@ -108,34 +107,80 @@ class _PoiListPageState extends State<PoiListPage> {
       showModalBottomSheet(
           context: context,
           builder: (BuildContext bc){
-            return Container(
-              padding: EdgeInsets.only(bottom: 64.0),
-              child: new Wrap(
-                children: <Widget>[
-                  new ListTile(
-                    title: new Text('Day 1'),
-                    onTap: () => {}
-                  ),
-                  new ListTile(
-                    title: new Text('Day 2'),
-                    onTap: () => {},
-                  ),
-                  new ListTile(
-                    title: new Text('Day 3'),
-                    onTap: () => {},
-                  ),
-                  new ListTile(
-                    title: new Text('Day 4'),
-                    onTap: () => {},
-                  ),
-                  new ListTile(
-                    title: new Text('Day 5'),
-                    onTap: () => {},
-                  ),
-                ],
-              ),
+            return BlocBuilder(
+                bloc: _dayBloc,
+                builder: (BuildContext context, DayState state){
+                  if(state is DayUninitialized){
+                    return Container(
+                      padding: EdgeInsets.only(bottom: 64.0)
+                    );
+                  }
+
+                  if(state is DayLoaded){
+                    return new Center(
+                        child: new ListView.builder(
+                            padding: const EdgeInsets.all(16.0),
+                            itemCount: state.days.length,
+                            itemBuilder: (BuildContext _context, int i) {
+                              return _buildDayRow(i, state.days[i]);
+                            }
+                        )
+                    );
+                  }
+                }
             );
           }
       );
     }
+
+    Widget _buildDayRow(int index, Day day) {
+      return new GestureDetector(
+        onTap: () => {},
+        child: new Card(
+          child: new Container(
+            padding: new EdgeInsets.all(32.0),
+            child: new Column(
+              children: <Widget>[
+                new Text("${day.index}", style: _biggerFont),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+//    void _settingModalBottomSheet(context){
+//      showModalBottomSheet(
+//          context: context,
+//          builder: (BuildContext bc){
+//            return Container(
+//              padding: EdgeInsets.only(bottom: 64.0),
+//              child: new Wrap(
+//                children: <Widget>[
+//                  new ListTile(
+//                    title: new Text('Day 1'),
+//                    onTap: () => {}
+//                  ),
+//                  new ListTile(
+//                    title: new Text('Day 2'),
+//                    onTap: () => {},
+//                  ),
+//                  new ListTile(
+//                    title: new Text('Day 3'),
+//                    onTap: () => {},
+//                  ),
+//                  new ListTile(
+//                    title: new Text('Day 4'),
+//                    onTap: () => {},
+//                  ),
+//                  new ListTile(
+//                    title: new Text('Day 5'),
+//                    onTap: () => {},
+//                  ),
+//                ],
+//              ),
+//            );
+//          }
+//      );
+//    }
 }

@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 
-abstract class PoiEvent extends Equatable {}
+abstract class DayEvent extends Equatable {}
 
-class FetchPost extends PoiEvent {
+class FetchDays extends DayEvent {
   @override
   String toString() => 'Fetch';
 }
