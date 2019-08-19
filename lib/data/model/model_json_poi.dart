@@ -10,9 +10,9 @@ class JsonPoi {
 
   JsonCoordinate coordinates;
 
-  JsonPoi.fromMap(dynamic json) :
-        id = json['id'],
-        name = json['name'],
-        address = json['address'],
-        coordinates = JsonCoordinate.fromMap(json['coordinates']);
+//  JsonPoi.fromMap(dynamic json) :
+//        id = json['id'],
+//        name = json['name'],
+//        address = json['address'],
+//        coordinates = JsonCoordinate.fromMap(json['coordinates']);
 }

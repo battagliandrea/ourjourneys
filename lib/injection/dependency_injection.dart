@@ -28,15 +28,6 @@ class Injector {
     return _singleton;
   }
 
-  static PostRepository providePostRepository({Client client}) {
-    switch (_flavor) {
-      case Flavor.DEVEL:
-        return new PostRepositoryImpl(new RemoteDataSource(client: client));
-      default:
-        return new PostRepositoryImpl(new RemoteDataSource(client: client));
-    }
-  }
-
   static PoiRepository providePoiRepository({Client client}) {
     switch (_flavor) {
       case Flavor.DEVEL:

@@ -1,4 +1,4 @@
-export 'package:our_journeys/data/mapper/post_mapper.dart';
+export 'package:our_journeys/data/mapper/poi_mapper.dart';
 
 abstract class Convert<T, P> {
   P fromSourceModel(T fromModel);

@@ -4,9 +4,9 @@ class JsonCoordinate {
 
   double long;
 
-  JsonCoordinate.fromMap(dynamic json) :
-        lat = json['lat'],
-        long = json['long'];
+//  JsonCoordinate.fromMap(dynamic json) :
+//        lat = json['lat'],
+//        long = json['long'];
 }
 
 
