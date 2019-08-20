@@ -4,70 +4,7 @@
   "days": [
     {
       "index": 0,
-      "poi": [
-        {
-          "id": 1,
-          "name": "Stazione di Amsterdam Centraal",
-          "address": "Stationsplein, 1012 AB Amsterdam, Paesi Bassi",
-          "coordinates": {
-            "lat": 52.378100,
-            "long": 4.900020
-          }
-        },
-        {
-          "id": 2,
-          "name": "Basilica di San Nicola",
-          "address": "Prins Hendrikkade 73, 1012 AD Amsterdam, Paesi Bassi",
-          "coordinates": {
-            "lat": 52.376570,
-            "long": 4.900760
-          }
-        },
-        {
-          "id": 3,
-          "name": "Chiesa Vecchia",
-          "address": "Oudekerksplein 23, 1012 GX Amsterdam, Paesi Bassi",
-          "coordinates": {
-            "lat": 52.374120,
-            "long": 4.897760
-          }
-        }
-      ]
-    },
-    {
-      "index": 1,
-      "poi": [
-        {
-          "id": 1,
-          "name": "Stazione di Amsterdam Centraal",
-          "address": "Stationsplein, 1012 AB Amsterdam, Paesi Bassi",
-          "coordinates": {
-            "lat": 52.378100,
-            "long": 4.900020
-          }
-        },
-        {
-          "id": 2,
-          "name": "Basilica di San Nicola",
-          "address": "Prins Hendrikkade 73, 1012 AD Amsterdam, Paesi Bassi",
-          "coordinates": {
-            "lat": 52.376570,
-            "long": 4.900760
-          }
-        },
-        {
-          "id": 3,
-          "name": "Chiesa Vecchia",
-          "address": "Oudekerksplein 23, 1012 GX Amsterdam, Paesi Bassi",
-          "coordinates": {
-            "lat": 52.374120,
-            "long": 4.897760
-          }
-        }
-      ]
-    },
-    {
-      "index": 2,
+      "date": "2019-09-03T00:00:00+0100",
       "poi": [
         {
           "id": 1,

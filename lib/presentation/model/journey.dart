@@ -1,5 +1,3 @@
-import 'package:our_journeys/data/mapper/mappers.dart';
-import 'package:our_journeys/data/model/model_json_poi.dart';
 import 'package:our_journeys/presentation/model/day.dart';
 
 class Journey {
@@ -9,5 +7,4 @@ class Journey {
   List<Day> days;
 
   Journey(this.id, this.title, this.days);
-
 }

@@ -8,8 +8,10 @@ import 'package:our_journeys/presentation/bloc/poilist/poilist_bloc.dart';
 import 'package:our_journeys/presentation/model/model.dart';
 import 'package:our_journeys/presentation/views/poi_details_page.dart';
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//          PAGE
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class PoiListPage extends StatefulWidget {
-
   PoiListPage({Key key, this.title}) : super(key: key);
 
     final String title;
@@ -18,6 +20,9 @@ class PoiListPage extends StatefulWidget {
     _PoiListPageState createState() => new _PoiListPageState();
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//          PAGE STATE
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class _PoiListPageState extends State<PoiListPage> {
 
     final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
@@ -52,6 +57,9 @@ class _PoiListPageState extends State<PoiListPage> {
         );
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //          POI LIST VIEW
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Widget _buildListView() {
         return BlocBuilder(
             bloc: _postBloc,
@@ -103,6 +111,9 @@ class _PoiListPageState extends State<PoiListPage> {
       );
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //          BOTTOM SHEET
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void _settingModalBottomSheet(context){
       showModalBottomSheet(
           context: context,
@@ -111,15 +122,16 @@ class _PoiListPageState extends State<PoiListPage> {
                 bloc: _dayBloc,
                 builder: (BuildContext context, DayState state){
                   if(state is DayUninitialized){
-                    return Container(
-                      padding: EdgeInsets.only(bottom: 64.0)
-                    );
+                    return Container();
                   }
 
                   if(state is DayLoaded){
-                    return new Center(
-                        child: new ListView.builder(
-                            padding: const EdgeInsets.all(16.0),
+                    return new Container(
+                        child: new ListView.separated(
+                            separatorBuilder: (context, index) => Divider(
+                              color: Colors.blueGrey,
+                            ),
+                            padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 16.0),
                             itemCount: state.days.length,
                             itemBuilder: (BuildContext _context, int i) {
                               return _buildDayRow(i, state.days[i]);
@@ -136,51 +148,10 @@ class _PoiListPageState extends State<PoiListPage> {
     Widget _buildDayRow(int index, Day day) {
       return new GestureDetector(
         onTap: () => {},
-        child: new Card(
-          child: new Container(
-            padding: new EdgeInsets.all(32.0),
-            child: new Column(
-              children: <Widget>[
-                new Text("${day.index}", style: _biggerFont),
-              ],
-            ),
-          ),
-        ),
+        child: ListTile(
+          leading: Icon(Icons.calendar_today),
+          title: Text("Day ${day.index+1}", style: _biggerFont),
+        )
       );
     }
-
-//    void _settingModalBottomSheet(context){
-//      showModalBottomSheet(
-//          context: context,
-//          builder: (BuildContext bc){
-//            return Container(
-//              padding: EdgeInsets.only(bottom: 64.0),
-//              child: new Wrap(
-//                children: <Widget>[
-//                  new ListTile(
-//                    title: new Text('Day 1'),
-//                    onTap: () => {}
-//                  ),
-//                  new ListTile(
-//                    title: new Text('Day 2'),
-//                    onTap: () => {},
-//                  ),
-//                  new ListTile(
-//                    title: new Text('Day 3'),
-//                    onTap: () => {},
-//                  ),
-//                  new ListTile(
-//                    title: new Text('Day 4'),
-//                    onTap: () => {},
-//                  ),
-//                  new ListTile(
-//                    title: new Text('Day 5'),
-//                    onTap: () => {},
-//                  ),
-//                ],
-//              ),
-//            );
-//          }
-//      );
-//    }
 }
