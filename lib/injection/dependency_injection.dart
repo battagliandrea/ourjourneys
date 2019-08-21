@@ -28,12 +28,12 @@ class Injector {
     return _singleton;
   }
 
-  static PoiRepository providePoiRepository({Client client}) {
+  static JourneyRepository providePoiRepository({Client client}) {
     switch (_flavor) {
       case Flavor.DEVEL:
-        return new PoiRepositoryImpl(new JsonDataSource());
+        return new JourneyRepositoryImpl(new JsonDataSource());
       default:
-        return new PoiRepositoryImpl(new JsonDataSource());
+        return new JourneyRepositoryImpl(new JsonDataSource());
     }
   }
 

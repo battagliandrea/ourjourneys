@@ -13,16 +13,11 @@ class JsonDataSource{
 
   Future<Journey> fetchJourney() async {
     try {
-
       String data = await DefaultAssetBundle.of(Injector.getContext()).loadString("assets/journey_amsterdam.json");
-      dynamic json = jsonDecode(data);
+      var journey = JsonJourney.fromMap(jsonDecode(data));
 
-      var journey = JsonJourney.fromMap(json);
+      return JourneyMapper.transformJourney(journey);
 
-      return JourneyMapper.transformJourney(json);
-
-    } on HttpException catch (e) {
-      return null;
     } catch (err) {
       return null;
     }

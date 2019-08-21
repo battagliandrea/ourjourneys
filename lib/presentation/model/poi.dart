@@ -4,7 +4,7 @@ class Poi{
   String name;
   String address;
   double lat;
-  double long;
+  double lon;
 
-  Poi(this.id, this.name, this.address, this.lat, this.long);
+  Poi(this.id, this.name, this.address, this.lat, this.lon);
 }

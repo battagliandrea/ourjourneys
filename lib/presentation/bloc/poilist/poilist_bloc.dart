@@ -13,10 +13,10 @@ class PoiBloc extends Bloc<PoiEvent, PoiState> {
   Stream<PoiState> mapEventToState(PoiEvent event) async* {
     if(event is FetchPost){
       try{
-        if (currentState is PoiUninitialized) {
-          var poi = await new FetchPoiUseCase(Injector.providePoiRepository()).fetchPoi();
+        //if (currentState is PoiUninitialized) {
+          var poi = await new FetchPoiUseCase(Injector.providePoiRepository()).fetchPoi(event.index);
           yield PoiLoaded(poi);
-        }
+        //}
       } catch(_){
         yield PoiError();
       }

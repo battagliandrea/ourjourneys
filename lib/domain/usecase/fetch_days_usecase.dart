@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:our_journeys/data/repository/poi_repository.dart';
+import 'package:our_journeys/data/repository/journey_repository.dart';
 import 'package:our_journeys/presentation/model/model.dart';
 
 class FetchDaysUseCase {
-  PoiRepository poiRepository;
+  JourneyRepository poiRepository;
 
-  FetchDaysUseCase(PoiRepository poiRepository) {
+  FetchDaysUseCase(JourneyRepository poiRepository) {
     this.poiRepository = poiRepository;
   }
 

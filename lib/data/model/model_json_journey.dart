@@ -5,24 +5,24 @@ class JsonJourney {
 
   String id;
   String title;
-  List<dynamic> days;
+  List<JsonDay> days;
 
   JsonJourney.fromMap(dynamic json) :
     id = json['id'],
     title = json['title'],
-    days = json["days"].map((p) => JsonDay.fromMap(p)).toList();
+    days = new List<JsonDay>.from(json["days"].map((p) => JsonDay.fromMap(p)).toList());
 }
 
 class JsonDay {
 
   int index;
   String date;
-  List<dynamic> poi;
+  List<JsonPoi> poi;
 
-  JsonDay JsonDay.fromMap(dynamic json) :
+  JsonDay.fromMap(dynamic json) :
     index = json['index'],
     date = json['date'],
-    poi = json['poi'].map((p) => JsonPoi.fromMap(p)).toList();
+    poi = new List<JsonPoi>.from(json['poi'].map((p) => JsonPoi.fromMap(p)).toList());
 }
 
 
@@ -45,11 +45,11 @@ class JsonPoi {
 class JsonCoordinate {
 
   double lat;
-  double long;
+  double lon;
 
   JsonCoordinate.fromMap(dynamic json) {
     lat = json['lat'];
-    long = json['long'];
+    lon = json['lon'];
   }
 
 }

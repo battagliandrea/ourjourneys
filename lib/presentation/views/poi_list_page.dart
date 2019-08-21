@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:our_journeys/presentation/bloc/daylist/daylist.dart';
 import 'package:our_journeys/presentation/bloc/daylist/daylist_bloc.dart';
 import 'package:our_journeys/presentation/bloc/daylist/daylist_state.dart';
@@ -32,29 +33,29 @@ class _PoiListPageState extends State<PoiListPage> {
     @override
     void initState() {
         super.initState();
-        _postBloc.dispatch(FetchPost());
+        _postBloc.dispatch(FetchPost(0));
         _dayBloc.dispatch(FetchDays());
     }
 
     @override
     Widget build(BuildContext context) {
-        return new Scaffold(
-          appBar: new AppBar(
-              title: new Text(widget.title),
+      return new Scaffold(
+        appBar: new AppBar(
+            title: new Text(widget.title),
+        ),
+        body: _buildListView(),
+        bottomNavigationBar: BottomAppBar(
+          child: new Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.menu), onPressed: () {
+                _settingModalBottomSheet(context);
+              },),
+            ],
           ),
-          body: _buildListView(),
-          bottomNavigationBar: BottomAppBar(
-            child: new Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(icon: Icon(Icons.menu), onPressed: () {
-                  _settingModalBottomSheet(context);
-                },),
-              ],
-            ),
-          ),
-        );
+        ),
+      );
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,25 +66,25 @@ class _PoiListPageState extends State<PoiListPage> {
             bloc: _postBloc,
             builder: (BuildContext context, PoiState state){
                 if(state is PoiUninitialized){
-                    return new Center(
+                    return Center(
                         child: CircularProgressIndicator()
                     );
                 }
 
                 if(state is PoiLoaded){
-                    return new Center(
+                    return Center(
                             child: new ListView.builder(
                             padding: const EdgeInsets.all(16.0),
                             itemCount: state.poi.length,
                             itemBuilder: (BuildContext _context, int i) {
-                                return _buildRow(i, state.poi[i]);
+                              return _buildRow(_context, state.poi[i]);
                             }
                         )
                     );
                 }
 
                 if(state is PoiError){
-                    return new Center(
+                    return Center(
                         child: Text('failed to fetch posts')
                     );
                 }
@@ -91,7 +92,7 @@ class _PoiListPageState extends State<PoiListPage> {
         );
     }
 
-    Widget _buildRow(int index, Poi poi) {
+    Widget _buildRow(context, Poi poi) {
       return new GestureDetector(
         onTap: () => {
           Navigator.push( context, MaterialPageRoute(builder: (context) => PoiDetailsPage()))
@@ -103,7 +104,7 @@ class _PoiListPageState extends State<PoiListPage> {
               children: <Widget>[
                 new Text("${poi.name}", style: _biggerFont),
                 new Text("${poi.address}"),
-                new Text("${poi.lat} - ${poi.long}")
+                new Text("${poi.lat} - ${poi.lon}")
               ],
             ),
           ),
@@ -134,7 +135,7 @@ class _PoiListPageState extends State<PoiListPage> {
                             padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 16.0),
                             itemCount: state.days.length,
                             itemBuilder: (BuildContext _context, int i) {
-                              return _buildDayRow(i, state.days[i]);
+                              return _buildDayRow(_context, state.days[i]);
                             }
                         )
                     );
@@ -145,13 +146,20 @@ class _PoiListPageState extends State<PoiListPage> {
       );
     }
 
-    Widget _buildDayRow(int index, Day day) {
-      return new GestureDetector(
-        onTap: () => {},
-        child: ListTile(
+    Widget _buildDayRow(context, Day day) {
+      return new ListTile(
           leading: Icon(Icons.calendar_today),
-          title: Text("Day ${day.index+1}", style: _biggerFont),
-        )
+          title: Text("${new DateFormat("dd MMM").format(day.date)}", style: _biggerFont),
+          onTap: () => {
+            Navigator.pop(context),
+            _postBloc.dispatch(FetchPost(day.index))
+          },
       );
+    }
+
+    void _showInSnackBar(context, String value) {
+      Scaffold.of(context).showSnackBar(new SnackBar(
+          content: new Text(value)
+      ));
     }
 }
