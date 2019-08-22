@@ -45,20 +45,32 @@ class _PoiListPageState extends State<PoiListPage> {
         title: new Text(widget.title),
       ),
       body: _buildListView(),
-      bottomNavigationBar: BottomAppBar(
-        child: new Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(icon: Icon(Icons.menu), onPressed: () {
-              _settingModalBottomSheet(context);
-            },),
-          ],
-        ),
-      ),
+      floatingActionButtonLocation:
+      FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.map), onPressed: () {},),
+      bottomNavigationBar: _buildBottomAppBar()
     );
   }
 
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //          BOTTOM APP BAR
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Widget _buildBottomAppBar() {
+    return BottomAppBar(
+      shape: CircularNotchedRectangle(),
+      notchMargin: 8.0,
+      child: new Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          IconButton(icon: Icon(Icons.menu), onPressed: () {
+            _settingModalBottomSheet(context);
+          },),
+        ],
+      ),
+    );
+  }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //          POI LIST VIEW
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
