@@ -1,6 +1,4 @@
 
-import 'package:our_journeys/presentation/model/model.dart';
-
 class JsonJourney {
 
   String id;
