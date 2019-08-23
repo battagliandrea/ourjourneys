@@ -10,6 +10,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="our_journeys"
         android:icon="@mipmap/ic_launcher">
+
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -29,5 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDbSEuV9Not3vrA2c9T7hOripOYIQJhwwI"/>
     </application>
 </manifest>
