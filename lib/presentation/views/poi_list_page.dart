@@ -7,7 +7,7 @@ import 'package:our_journeys/presentation/bloc/daylist/daylist_state.dart';
 import 'package:our_journeys/presentation/bloc/poilist/poilist.dart';
 import 'package:our_journeys/presentation/bloc/poilist/poilist_bloc.dart';
 import 'package:our_journeys/presentation/model/model.dart';
-import 'package:our_journeys/presentation/views/poi_details_page.dart';
+import 'package:our_journeys/presentation/views/map_page.dart';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //          PAGE
@@ -50,7 +50,7 @@ class _PoiListPageState extends State<PoiListPage> {
       FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.map), onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => PoiDetailsPage()),);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MapPage()),);
         },
       ),
       bottomNavigationBar: _buildBottomAppBar()
