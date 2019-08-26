@@ -44,10 +44,19 @@ class _PoiListPageState extends State<PoiListPage> {
       appBar: _buildAppBar(),
       body: _buildListView(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.map), onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => MapPage()),);
-        },
+      floatingActionButton: BlocBuilder(
+          bloc: _dayBloc,
+          builder: (BuildContext context, DaysState state){
+            if(state is DaysLoaded){
+              return FloatingActionButton(
+                child: const Icon(Icons.map), onPressed: () {
+                  var day = state.selectedDay;
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MapPage(day: day)));
+                },
+              );
+            }
+            return new Text("Our Journey");
+          }
       ),
       bottomNavigationBar: _buildBottomAppBar()
     );
@@ -63,7 +72,7 @@ class _PoiListPageState extends State<PoiListPage> {
         bloc: _dayBloc,
         builder: (BuildContext context, DaysState state){
           if(state is DaysLoaded){
-            return new Text("${new DateFormat("dd MMMM").format(state.selectedDay.date)}");
+            return new Text("${state.selectedDay.getFormattedDate()}");
           }
           return new Text("Our Journey");
         }
@@ -211,7 +220,7 @@ class _PoiListPageState extends State<PoiListPage> {
   Widget _buildDayRow(context, Day day) {
     return new ListTile(
       leading: Icon(Icons.calendar_today),
-      title: Text("${new DateFormat("dd MMMM").format(day.date)}"),
+      title: Text("${day.getFormattedDate()}"),
       onTap: () => {
         Navigator.pop(context),
         _postBloc.dispatch(FetchPoi(day.index)),
