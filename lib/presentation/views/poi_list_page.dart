@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:our_journeys/presentation/bloc/daylist/daylist.dart';
-import 'package:our_journeys/presentation/bloc/daylist/daylist_bloc.dart';
-import 'package:our_journeys/presentation/bloc/daylist/daylist_state.dart';
-import 'package:our_journeys/presentation/bloc/poilist/poilist.dart';
-import 'package:our_journeys/presentation/bloc/poilist/poilist_bloc.dart';
-import 'package:our_journeys/presentation/model/model.dart';
+import 'package:our_journeys/domain/bloc/daylist/daylist.dart';
+import 'package:our_journeys/domain/bloc/daylist/daylist_bloc.dart';
+import 'package:our_journeys/domain/bloc/daylist/daylist_state.dart';
+import 'package:our_journeys/domain/bloc/poilist/poilist.dart';
+import 'package:our_journeys/domain/bloc/poilist/poilist_bloc.dart';
+import 'package:our_journeys/domain/model/models.dart';
 import 'package:our_journeys/presentation/views/map_page.dart';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,26 +28,22 @@ class _PoiListPageState extends State<PoiListPage> {
 
   final TextStyle _H1Font = const TextStyle(color: Colors.black87, fontSize: 21.0, fontWeight: FontWeight.bold);
   final TextStyle _B1Font = const TextStyle(color: Colors.black38, fontSize: 14.0, fontWeight: FontWeight.bold);
-
   final PoiBloc _postBloc = PoiBloc();
   final DayBloc _dayBloc = DayBloc();
 
   @override
   void initState() {
     super.initState();
-    _postBloc.dispatch(FetchPost(0));
-    _dayBloc.dispatch(FetchDays());
+    _postBloc.dispatch(FetchPoi(0));
+    _dayBloc.dispatch(FetchDays(0));
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
-      ),
+      appBar: _buildAppBar(),
       body: _buildListView(),
-      floatingActionButtonLocation:
-      FloatingActionButtonLocation.endDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.map), onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => MapPage()),);
@@ -56,6 +52,25 @@ class _PoiListPageState extends State<PoiListPage> {
       bottomNavigationBar: _buildBottomAppBar()
     );
   }
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //          BOTTOM APP BAR
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Widget _buildAppBar() {
+    return new AppBar(
+      title: BlocBuilder(
+        bloc: _dayBloc,
+        builder: (BuildContext context, DaysState state){
+          if(state is DaysLoaded){
+            return new Text("${new DateFormat("dd MMMM").format(state.selectedDay.date)}");
+          }
+          return new Text("Our Journey");
+        }
+      )
+    );
+  }
+
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //          BOTTOM APP BAR
@@ -75,6 +90,7 @@ class _PoiListPageState extends State<PoiListPage> {
       ),
     );
   }
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //          POI LIST VIEW
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -105,15 +121,12 @@ class _PoiListPageState extends State<PoiListPage> {
                 child: Text('failed to fetch posts')
             );
           }
+          return Container();
         }
     );
   }
 
   Widget _buildRow(context, int index, Poi poi) {
-
-    int _flexFactorIcon= 2;
-    int _flexFactorCard = 8;
-
     return new Stack(
       children: <Widget>[
         new Row(
@@ -168,12 +181,12 @@ class _PoiListPageState extends State<PoiListPage> {
         builder: (BuildContext bc){
           return BlocBuilder(
               bloc: _dayBloc,
-              builder: (BuildContext context, DayState state){
+              builder: (BuildContext context, DaysState state){
                 if(state is DayUninitialized){
                   return Container();
                 }
 
-                if(state is DayLoaded){
+                if(state is DaysLoaded){
                   return new Container(
                       child: new ListView.separated(
                           separatorBuilder: (context, index) => Divider(
@@ -187,6 +200,8 @@ class _PoiListPageState extends State<PoiListPage> {
                       )
                   );
                 }
+
+                return Container();
               }
           );
         }
@@ -196,10 +211,11 @@ class _PoiListPageState extends State<PoiListPage> {
   Widget _buildDayRow(context, Day day) {
     return new ListTile(
       leading: Icon(Icons.calendar_today),
-      title: Text("${new DateFormat("dd MMM").format(day.date)}"),
+      title: Text("${new DateFormat("dd MMMM").format(day.date)}"),
       onTap: () => {
         Navigator.pop(context),
-        _postBloc.dispatch(FetchPost(day.index))
+        _postBloc.dispatch(FetchPoi(day.index)),
+        _dayBloc.dispatch(FetchDays(day.index))
       },
     );
   }

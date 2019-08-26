@@ -1,4 +1,4 @@
-import 'package:our_journeys/presentation/model/day.dart';
+import 'package:our_journeys/domain/model/day.dart';
 
 class Journey {
 

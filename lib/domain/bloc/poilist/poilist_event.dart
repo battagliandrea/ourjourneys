@@ -2,12 +2,9 @@ import 'package:equatable/equatable.dart';
 
 abstract class PoiEvent extends Equatable {}
 
-class FetchPost extends PoiEvent {
+class FetchPoi extends PoiEvent {
 
   final int index;
 
-  FetchPost(this.index);
-
-  @override
-  String toString() => 'Fetch';
+  FetchPoi(this.index);
 }

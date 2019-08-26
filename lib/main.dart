@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: new PoiListPage(title: 'Our Journeys'),
+      home: new PoiListPage(),
     );
   }
 }

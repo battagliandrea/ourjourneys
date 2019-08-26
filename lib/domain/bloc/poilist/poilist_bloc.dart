@@ -1,8 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:our_journeys/injection/dependency_injection.dart';
-import 'package:our_journeys/presentation/bloc/poilist/poilist.dart';
-import 'package:our_journeys/domain/usecase/usecase.dart';
-
+import 'package:our_journeys/domain/bloc/poilist/poilist.dart';
 
 class PoiBloc extends Bloc<PoiEvent, PoiState> {
 
@@ -11,10 +9,10 @@ class PoiBloc extends Bloc<PoiEvent, PoiState> {
 
   @override
   Stream<PoiState> mapEventToState(PoiEvent event) async* {
-    if(event is FetchPost){
+    if(event is FetchPoi){
       try{
         //if (currentState is PoiUninitialized) {
-          var poi = await new FetchPoiUseCase(Injector.providePoiRepository()).fetchPoi(event.index);
+          var poi = await Injector.providePoiRepository().fetchPoi(event.index);
           yield PoiLoaded(poi);
         //}
       } catch(_){

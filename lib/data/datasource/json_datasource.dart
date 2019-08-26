@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:our_journeys/data/mapper/journey_mapper.dart';
 import 'package:our_journeys/data/model/model_json_journey.dart';
 import 'package:our_journeys/injection/dependency_injection.dart';
-import 'package:our_journeys/presentation/model/model.dart';
+import 'package:our_journeys/domain/model/models.dart';
 
 
 class JsonDataSource{

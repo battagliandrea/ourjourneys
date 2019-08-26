@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:our_journeys/presentation/model/model.dart';
+import 'package:our_journeys/domain/model/models.dart';
 
 abstract class PoiState extends Equatable {
   PoiState([List props = const []]) : super(props);

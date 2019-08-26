@@ -1,5 +1,5 @@
 
-import 'package:our_journeys/presentation/model/model.dart';
+import 'package:our_journeys/domain/model/models.dart';
 
 class Day {
 
