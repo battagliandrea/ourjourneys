@@ -1,3 +1,5 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 class Poi{
 
   int id;
@@ -7,4 +9,8 @@ class Poi{
   double lon;
 
   Poi(this.id, this.name, this.address, this.lat, this.lon);
+
+  LatLng getLatLng(){
+    return new LatLng(lat, lon);
+  }
 }

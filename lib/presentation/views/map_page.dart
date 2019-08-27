@@ -11,86 +11,85 @@ class MapPage extends StatefulWidget {
 
   MapPage({Key key, this.day}) : super(key: key);
 
-    final Day day;
+  final Day day;
 
-    @override
-    _MapPageState createState() => new _MapPageState();
+  @override
+  _MapPageState createState() => new _MapPageState();
 }
 
 class _MapPageState extends State<MapPage> {
 
-    Completer<GoogleMapController> _controller = Completer();
-    final Set<Marker> _markers = {};
+  Completer<GoogleMapController> _controller = Completer();
 
-    final DayBloc _dayBloc = DayBloc();
+  final DayBloc _dayBloc = DayBloc();
 
-    static final CameraPosition _kGooglePlex = CameraPosition(
-      target: LatLng(52.373170, 4.890660),
-      zoom: 14.0,
-    );
+  final Set<Marker> _markers = {};
+  final Set<Polyline> _polyline = {};
 
-    static final CameraPosition _testPosition = CameraPosition(
-        bearing: 192.8334901395799,
-        target: LatLng(52.378100, 4.900020),
-        tilt: 59.440717697143555,
-        zoom: 19.151926040649414);
+  void _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
+  }
 
-    static final LatLng _testPosition2 = LatLng(52.378100, 4.900020);
+  @override
+  void initState() {
+    super.initState();
+    _dayBloc.dispatch(FetchDays(widget.day.index));
+  }
 
-    void _onMapCreated(GoogleMapController controller) {
-      _controller.complete(controller);
-    }
-
-    @override
-    void initState() {
-        super.initState();
-        _dayBloc.dispatch(FetchDays(widget.day.index));
-    }
-
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
           title: Text("${widget.day.getFormattedDate()}"),
         ),
         body: _buildMapView()
-//        body: GoogleMap(
-//          markers: _markers,
-//          mapType: MapType.normal,
-//          initialCameraPosition: _kGooglePlex,
-//          onMapCreated: _onMapCreated,
-//        ),
-      );
-    }
+    );
+  }
 
-    Widget _buildMapView() {
-      return BlocBuilder(
-          bloc: _dayBloc,
-          builder: (BuildContext context, DaysState state){
-            if(state is DaysLoaded){
+  Widget _buildMapView() {
+    return BlocBuilder(
+        bloc: _dayBloc,
+        builder: (BuildContext context, DaysState state){
+          if(state is DaysLoaded){
 
-              state.selectedDay.poi.forEach((p) =>
-                  _markers.add(Marker(
-                    markerId: MarkerId(p.id.toString()),
-                    position: LatLng(p.lat, p.lon),
-                    infoWindow: InfoWindow(
-                      title: p.name,
-                      snippet: p.address,
-                    ),
-                    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-                  ))
-              );
+            var startPoint = new CameraPosition(
+              target: state.selectedDay.poi[0].getLatLng(),
+              zoom: 14.0
+            );
 
-              return GoogleMap(
-                markers: _markers,
-                mapType: MapType.normal,
-                initialCameraPosition: _kGooglePlex,
-                onMapCreated: _onMapCreated,
-                myLocationButtonEnabled: false,
-              );
-            }
-            return GoogleMap(onMapCreated: _onMapCreated);
+            var points = new List<LatLng>();
+
+            state.selectedDay.poi.forEach((p) => {
+              points.add(p.getLatLng()),
+              _markers.add(Marker(
+                markerId: MarkerId(p.id.toString()),
+                position: p.getLatLng(),
+                infoWindow: InfoWindow(
+                  title: p.name,
+                  snippet: p.address,
+                ),
+                icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+              ))
+            });
+
+            _polyline.add(Polyline(
+              polylineId: PolylineId(state.selectedDay.index.toString()),
+              visible: true,
+              points: points,
+              color: Colors.orange,
+            ));
+
+            return GoogleMap(
+              markers: _markers,
+              polylines: _polyline,
+              mapType: MapType.normal,
+              initialCameraPosition: startPoint,
+              onMapCreated: _onMapCreated,
+              myLocationButtonEnabled: false,
+            );
           }
-      );
-    }
+          return GoogleMap(onMapCreated: _onMapCreated);
+        }
+    );
+  }
 }
