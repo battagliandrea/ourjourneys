@@ -8,12 +8,13 @@ import 'package:our_journeys/domain/bloc/poilist/poilist.dart';
 import 'package:our_journeys/domain/bloc/poilist/poilist_bloc.dart';
 import 'package:our_journeys/domain/model/models.dart';
 import 'package:our_journeys/presentation/views/map_page.dart';
+import 'package:our_journeys/presentation/views/poi_detail_page.dart';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //          PAGE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class PoiListPage extends StatefulWidget {
-  PoiListPage({Key key, this.title}) : super(key: key);
+  PoiListPage({Key key, this.title }) : super(key: key);
 
   final String title;
 
@@ -144,14 +145,19 @@ class _PoiListPageState extends State<PoiListPage> {
               child: new Container(
                 margin: const EdgeInsets.only(left: 16.0),
                 child: new Card(
-                  child: new Container(
-                    padding: new EdgeInsets.only(left:36.0, top: 24.0, bottom: 24.0, right: 24.0),
-                    child: new Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        new Text("${poi.name}", style: _H1Font, maxLines: 1, overflow: TextOverflow.ellipsis),
-                        new Text("${poi.address}", style: _B1Font)
-                      ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PoiDetailPage(poi: poi)));
+                    },
+                    child: new Container(
+                      padding: new EdgeInsets.only(left:36.0, top: 24.0, bottom: 24.0, right: 24.0),
+                      child: new Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          new Text("${poi.name}", style: _H1Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                          new Text("${poi.address}", style: _B1Font)
+                        ],
+                      ),
                     ),
                   ),
                 ),
