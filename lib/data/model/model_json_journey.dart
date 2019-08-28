@@ -28,12 +28,14 @@ class JsonPoi {
 
   int id;
   String name;
+  String description;
   String address;
   JsonCoordinate coordinates;
 
   JsonPoi.fromMap(dynamic json) :
     id = json['id'],
     name = json['name'],
+    description = json['description'],
     address = json['address'],
     coordinates = JsonCoordinate.fromMap(json['coordinates']);
 }

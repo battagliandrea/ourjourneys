@@ -45,18 +45,11 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   //         COLLAPSIBG VIEW
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildCollapsingLayout(Poi poi) {
-    return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        return <Widget>[
-          SliverAppBar(
-            expandedHeight: 200.0,
-            floating: false,
-            pinned: true,
-            flexibleSpace: _buildAppBar(),
-          ),
-        ];
-      },
-      body: _buildBody(poi)
+    return CustomScrollView(
+      slivers: <Widget>[
+        _buildAppBar(),
+        _buildBody(poi)
+      ],
     );
   }
 
@@ -64,13 +57,19 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   //         APP BAR VIEW
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildAppBar() {
-    return new FlexibleSpaceBar(
-        centerTitle: true,
-        title: new Text(widget.poi.name, maxLines: 1, overflow: TextOverflow.ellipsis),
-        background: Image.network(
-          "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
-          fit: BoxFit.cover,
-        )
+    return SliverAppBar(
+      expandedHeight: 250.0,
+      floating: true,
+      pinned: true,
+      snap: false,
+      flexibleSpace: new FlexibleSpaceBar(
+          centerTitle: true,
+          title: new Text(widget.poi.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+          background: Image.network(
+            "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
+            fit: BoxFit.cover,
+          )
+      ),
     );
   }
 
@@ -78,14 +77,17 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   //         BODY
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildBody(Poi poi) {
-    return new Container(
-      padding: new EdgeInsets.all(24.0),
-      child: new Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          new Text("${poi.address}", style: _B1Font),
-        ],
-      ),
+    return new SliverToBoxAdapter(
+      child: new Container(
+        padding: new EdgeInsets.only(left: 16.0, right: 16.0, top: 20.0, bottom: 20.0),
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            new Text("${poi.address}", style: _H1Font),
+            new Text("${poi.description}", style: _B1Font),
+          ],
+        ),
+      )
     );
   }
 

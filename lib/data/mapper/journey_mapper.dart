@@ -37,6 +37,7 @@ class JourneyMapper {
     return new Poi(
         jsonModel.id,
         jsonModel.name,
+        jsonModel.description,
         jsonModel.address,
         jsonModel.coordinates.lat,
         jsonModel.coordinates.lon
