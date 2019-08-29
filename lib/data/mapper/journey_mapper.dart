@@ -39,6 +39,7 @@ class JourneyMapper {
         jsonModel.name,
         jsonModel.description,
         jsonModel.address,
+        jsonModel.image,
         jsonModel.coordinates.lat,
         jsonModel.coordinates.lon
     );

@@ -11,6 +11,7 @@
           "name": "Stazione di Amsterdam Centraal",
           "description": "La stazione centrale, con la sua imponente struttura dallo stile neorinascimentale unito ad influenze gotiche (il progetto è dall’architetto Petrus Cuyper, autore anche del Rijksmuseum), fu costruita su tre isole artificiali (sostenuta da più di 8000 pali) ed inaugurata nel 1889.\nDegna di nota (al piano superiore, binario 2) l’ex sala d’attesa di prima classe in stile Liberty, ora Grand Café.\nLa parte moderna (il retro della stazione) si affaccia sul porto (Het Ij), dal quale partono diversi piccoli traghetti che collegano il centro al nuovo complesso residenziale firmato da famosi architetti (Java Island) e all’area nord (Noord), quest’ultima un quartiere con nessuna attrattiva turistica e del quale sconsigliamo vivamente la visita.\nPolo della rete dei trasporti ferroviari nazionali ed internazionali (lo sportello apposito si trova anch’esso al binario 2), la stazione è tutt’oggi il cuore della rete dei trasporti pubblicidi Amsterdam; infatti, treni regolari, con frequenza di 15 minuti circa durante il giorno e di un’ora durante le ore notturne, collegano la stazione con l’aeroporto di Schipol. All’entrata principale della stazione, e in direzione dell’accesso dei binari, due monitor elencano i treni in partenza; quello di destra è in particolare dedicato agli orari dei treni per l’aeroporto.\nAppena fuori dalla stazione si trovano le fermate dei tram, ben due piazzali per i bus(rispettivamente per i collegamenti all’interno della città e per collegamenti con altri paesi/città dell’Olanda, questi ultimi gestiti dalla compagnia Connexxion), e la stazione della metropolitana.\nBen due sedi dell’ Ufficio Turistico sono situate alla stazione centrale: la principale al binario 2 e la secondaria all’uscita appena attraversati i binari del tram.\nSnackbar e negozi (tra i quali giornalai dove è possibile acquistare le apposite Strippenkaart per viaggiare sui mezzi pubblici) sono situati vicino alla biglietteria e lungo il corridoio di accesso ai binari.\nFuori dalla stazione il servizio Taxi è attivo 24 ore su 24. È anche presente un punto di noleggio biciclette.\nPer quel che concerne le attrazioni turistiche, appena usciti dalla stazione si noterà subito la massiccia (finita di restaurare e riaperta al pubblico nel 2005) facciata della St. Nicolaaskerk, Basilica edificata verso la fine del XIX secolo e dedicata al Patrono della città San Nicolao.\nNelle sue vicinanze (sulla trafficata strada Prins Hendrikkade) si trova una piccola torretta (oggi café e locale per party privati) che porta il nome di Schreyhoeckstoren (Torre delle Lacrime), in quanto nel Secolo d’Oro qui le donne si radunavano per piangere i loro uomini in partenza per mete lontane. Oggi ha perso la sua funzione di protezione, e può essere definita come il punto di entrata del più noto Quartiere a Luci Rosse di Amsterdam, famoso però anche per la comunità cinese che abita nell’area dello Zeedijk e i tipici ristoranti (le anatre marinate sono il simbolo che li distingue).\nLa principale via (Damrak), sempre affollata di turisti coi suoi cafè e negozi di souvenir, conduce alla famosa Piazza Dam, raggiungibile anche a piedi in circa 15 minuti.\n",
           "address": "Stationsplein, 1012 AB Amsterdam, Paesi Bassi",
+          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
           "coordinates": {
             "lat": 52.378100,
             "lon": 4.900020
@@ -21,6 +22,7 @@
           "name": "Basilica di San Nicola",
           "description": "",
           "address": "Prins Hendrikkade 73, 1012 AD Amsterdam, Paesi Bassi",
+          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
           "coordinates": {
             "lat": 52.376570,
             "lon": 4.900760
@@ -31,6 +33,7 @@
           "name": "Chiesa Vecchia",
           "description": "",
           "address": "Oudekerksplein 23, 1012 GX Amsterdam, Paesi Bassi",
+          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
           "coordinates": {
             "lat": 52.374120,
             "lon": 4.897760
@@ -44,8 +47,10 @@
       "poi": [
         {
           "id": 1,
-          "name": "Stazione di Amsterdam Centraal",
+          "name": "Amsterdam Centraal",
+          "description": "",
           "address": "Stationsplein, 1012 AB Amsterdam, Paesi Bassi",
+          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
           "coordinates": {
             "lat": 52.378100,
             "lon": 4.900020

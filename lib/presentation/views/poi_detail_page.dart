@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
-import 'package:our_journeys/domain/bloc/daylist/daylist.dart';
-import 'package:our_journeys/domain/bloc/daylist/daylist_bloc.dart';
-import 'package:our_journeys/domain/bloc/daylist/daylist_state.dart';
-import 'package:our_journeys/domain/bloc/poilist/poilist.dart';
-import 'package:our_journeys/domain/bloc/poilist/poilist_bloc.dart';
 import 'package:our_journeys/domain/model/models.dart';
-import 'package:our_journeys/presentation/views/map_page.dart';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //          PAGE
@@ -47,7 +39,7 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   Widget _buildCollapsingLayout(Poi poi) {
     return CustomScrollView(
       slivers: <Widget>[
-        _buildAppBar(),
+        _buildAppBar(poi),
         _buildBody(poi)
       ],
     );
@@ -56,7 +48,7 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //         APP BAR VIEW
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  Widget _buildAppBar() {
+  Widget _buildAppBar(Poi poi) {
     return SliverAppBar(
       expandedHeight: 250.0,
       floating: true,
@@ -66,7 +58,7 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
           centerTitle: true,
           title: new Text(widget.poi.name, maxLines: 1, overflow: TextOverflow.ellipsis),
           background: Image.network(
-            "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
+            poi.image,
             fit: BoxFit.cover,
           )
       ),

@@ -30,6 +30,7 @@ class JsonPoi {
   String name;
   String description;
   String address;
+  String image;
   JsonCoordinate coordinates;
 
   JsonPoi.fromMap(dynamic json) :
@@ -37,6 +38,7 @@ class JsonPoi {
     name = json['name'],
     description = json['description'],
     address = json['address'],
+    image = json['image'],
     coordinates = JsonCoordinate.fromMap(json['coordinates']);
 }
 
