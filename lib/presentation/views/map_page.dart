@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist_bloc.dart';
@@ -39,57 +38,64 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("${widget.day.getFormattedDate()}"),
-        ),
-        body: _buildMapView()
+      body: new Stack(
+        children: <Widget>[
+          _buildMapView(),
+          _buildAppBar(),
+
+        ],
+      )
+    );
+  }
+
+  Widget _buildAppBar() {
+    return new Positioned(
+        top: 0.0,
+        left: 0.0,
+        right: 0.0,
+        child: new AppBar(
+            elevation: 0,
+            backgroundColor: Colors.black12,
+            title: new Text("${widget.day.getFormattedDate()}")
+        )
     );
   }
 
   Widget _buildMapView() {
-    return BlocBuilder(
-        bloc: _dayBloc,
-        builder: (BuildContext context, DaysState state){
-          if(state is DaysLoaded){
+    var startPoint = new CameraPosition(
+        target: this.widget.day.poi[0].getLatLng(),
+        zoom: 14.0
+    );
 
-            var startPoint = new CameraPosition(
-              target: state.selectedDay.poi[0].getLatLng(),
-              zoom: 14.0
-            );
+    var points = new List<LatLng>();
 
-            var points = new List<LatLng>();
+    this.widget.day.poi.forEach((p) => {
+      points.add(p.getLatLng()),
+      _markers.add(Marker(
+        markerId: MarkerId(p.id.toString()),
+        position: p.getLatLng(),
+        infoWindow: InfoWindow(
+          title: p.name,
+          snippet: p.address,
+        ),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+      ))
+    });
 
-            state.selectedDay.poi.forEach((p) => {
-              points.add(p.getLatLng()),
-              _markers.add(Marker(
-                markerId: MarkerId(p.id.toString()),
-                position: p.getLatLng(),
-                infoWindow: InfoWindow(
-                  title: p.name,
-                  snippet: p.address,
-                ),
-                icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-              ))
-            });
+    _polyline.add(Polyline(
+      polylineId: PolylineId(this.widget.day.index.toString()),
+      visible: true,
+      points: points,
+      color: Colors.orange,
+    ));
 
-            _polyline.add(Polyline(
-              polylineId: PolylineId(state.selectedDay.index.toString()),
-              visible: true,
-              points: points,
-              color: Colors.orange,
-            ));
-
-            return GoogleMap(
-              markers: _markers,
-              polylines: _polyline,
-              mapType: MapType.normal,
-              initialCameraPosition: startPoint,
-              onMapCreated: _onMapCreated,
-              myLocationButtonEnabled: false,
-            );
-          }
-          return GoogleMap(onMapCreated: _onMapCreated);
-        }
+    return GoogleMap(
+      markers: _markers,
+      polylines: _polyline,
+      mapType: MapType.normal,
+      initialCameraPosition: startPoint,
+      onMapCreated: _onMapCreated,
+      myLocationButtonEnabled: false,
     );
   }
 }

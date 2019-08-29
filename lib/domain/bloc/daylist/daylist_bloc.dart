@@ -13,8 +13,8 @@ class DayBloc extends Bloc<DaysEvent, DaysState> {
       try{
 
         var days = await Injector.providePoiRepository().fetchDays();
-        var selectedDay = days.firstWhere((d) => d.index == event.selected);
-        yield DaysLoaded(days, selectedDay);
+//        var selectedDay = days.firstWhere((d) => d.index == event.selected);
+        yield DaysLoaded(days);
 
       } catch(_){
         yield DayError();

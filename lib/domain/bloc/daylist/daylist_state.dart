@@ -18,9 +18,8 @@ class DayError extends DaysState {
 
 class DaysLoaded extends DaysState {
   final List<Day> days;
-  final Day selectedDay;
 
-  DaysLoaded(this.days, this.selectedDay) : super([days, selectedDay]);
+  DaysLoaded(this.days) : super([days]);
 
 //  DaysLoaded copyWith({
 //    List<Poi> posts,

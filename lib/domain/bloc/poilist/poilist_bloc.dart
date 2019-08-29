@@ -12,8 +12,8 @@ class PoiBloc extends Bloc<PoiEvent, PoiState> {
     if(event is FetchPoi){
       try{
         //if (currentState is PoiUninitialized) {
-          var poi = await Injector.providePoiRepository().fetchPoi(event.index);
-          yield PoiLoaded(poi);
+          var day = await Injector.providePoiRepository().fetchDayByIndex(event.index);
+          yield PoiLoaded(day);
         //}
       } catch(_){
         yield PoiError();

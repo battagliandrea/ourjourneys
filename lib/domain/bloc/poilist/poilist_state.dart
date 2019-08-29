@@ -17,13 +17,13 @@ class PoiError extends PoiState {
 }
 
 class PoiLoaded extends PoiState {
-  final List<Poi> poi;
+  final Day day;
 
-  PoiLoaded(this.poi) : super(poi);
+  PoiLoaded(this.day) : super([day]);
 
-  PoiLoaded copyWith({
-    List<Poi> posts,
-  }){
-    return PoiLoaded(posts ?? this.poi);
-  }
+//  PoiLoaded copyWith({
+//    List<Poi> posts,
+//  }){
+//    return PoiLoaded(posts ?? this.poi);
+//  }
 }
