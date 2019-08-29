@@ -27,8 +27,8 @@ class PoiListPage extends StatefulWidget {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class _PoiListPageState extends State<PoiListPage> {
 
-  final TextStyle _H1Font = const TextStyle(color: Colors.black87, fontSize: 21.0, fontWeight: FontWeight.bold);
-  final TextStyle _B1Font = const TextStyle(color: Colors.black38, fontSize: 14.0, fontWeight: FontWeight.bold);
+  final TextStyle _H1Font = const TextStyle(color: Colors.black54, fontSize: 21.0, fontWeight: FontWeight.bold);
+  final TextStyle _B1Font = const TextStyle(color: Colors.black54, fontSize: 12.0, fontWeight: FontWeight.normal);
   final PoiBloc _postBloc = PoiBloc();
   final DayBloc _dayBloc = DayBloc();
 
@@ -42,24 +42,24 @@ class _PoiListPageState extends State<PoiListPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: _buildAppBar(),
-      body: _buildListView(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButton: BlocBuilder(
-          bloc: _dayBloc,
-          builder: (BuildContext context, DaysState state){
-            if(state is DaysLoaded){
-              return FloatingActionButton(
-                child: const Icon(Icons.map), onPressed: () {
+        appBar: _buildAppBar(),
+        body: _buildListView(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        floatingActionButton: BlocBuilder(
+            bloc: _dayBloc,
+            builder: (BuildContext context, DaysState state){
+              if(state is DaysLoaded){
+                return FloatingActionButton(
+                  child: const Icon(Icons.map), onPressed: () {
                   var day = state.selectedDay;
                   Navigator.push(context, MaterialPageRoute(builder: (context) => MapPage(day: day)));
                 },
-              );
+                );
+              }
+              return new Text("Our Journey");
             }
-            return new Text("Our Journey");
-          }
-      ),
-      bottomNavigationBar: _buildBottomAppBar()
+        ),
+        bottomNavigationBar: _buildBottomAppBar()
     );
   }
 
@@ -69,15 +69,15 @@ class _PoiListPageState extends State<PoiListPage> {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildAppBar() {
     return new AppBar(
-      title: BlocBuilder(
-        bloc: _dayBloc,
-        builder: (BuildContext context, DaysState state){
-          if(state is DaysLoaded){
-            return new Text("${state.selectedDay.getFormattedDate()}");
-          }
-          return new Text("Our Journey");
-        }
-      )
+        title: BlocBuilder(
+            bloc: _dayBloc,
+            builder: (BuildContext context, DaysState state){
+              if(state is DaysLoaded){
+                return new Text("${state.selectedDay.getFormattedDate()}");
+              }
+              return new Text("Our Journey");
+            }
+        )
     );
   }
 
@@ -116,13 +116,33 @@ class _PoiListPageState extends State<PoiListPage> {
 
           if(state is PoiLoaded){
             return Center(
-                child: new ListView.builder(
-                    padding: const EdgeInsets.all(16.0),
-                    itemCount: state.poi.length,
-                    itemBuilder: (BuildContext _context, int i) {
-                      return _buildRow(_context, i, state.poi[i]);
-                    }
-                )
+//                child: new ListView.builder(
+//                    padding: new EdgeInsets.symmetric(vertical: 16.0),
+//                    itemCount: state.poi.length,
+//                    itemBuilder: (BuildContext _context, int i) {
+//                      return _buildRow(_context, i, state.poi[i]);
+//                    }
+//                )
+//              child: new Expanded(
+                child: new Container(
+                  child: new CustomScrollView(
+                    scrollDirection: Axis.vertical,
+                    slivers: <Widget>[
+                      new SliverPadding(
+                        padding: const EdgeInsets.symmetric(vertical: 24.0),
+                        sliver: new SliverFixedExtentList(
+                          itemExtent: 152.0,
+                          delegate: new SliverChildBuilderDelegate(
+                                (context, index) => _buildRow(context, index, state.poi[index]),
+                            childCount: state.poi.length,
+
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+//              )
             );
           }
 
@@ -137,41 +157,124 @@ class _PoiListPageState extends State<PoiListPage> {
   }
 
   Widget _buildRow(context, int index, Poi poi) {
-    return new Stack(
-      children: <Widget>[
-        new Row(
+//    return new Stack(
+//      children: <Widget>[
+//        new Row(
+//          children: <Widget>[
+//            new Expanded(
+//              child: new Container(
+//                margin: const EdgeInsets.only(left: 16.0),
+//                child: new Card(
+//                  child: InkWell(
+//                    onTap: () {
+//                      Navigator.push(context, MaterialPageRoute(builder: (context) => PoiDetailPage(poi: poi)));
+//                    },
+//                    child: new Container(
+//                      padding: new EdgeInsets.only(left:36.0, top: 24.0, bottom: 24.0, right: 24.0),
+//                      child: new Column(
+//                        crossAxisAlignment: CrossAxisAlignment.start,
+//                        children: <Widget>[
+//                          new Text("${poi.name}", style: _H1Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+//                          new Text("${poi.address}", style: _B1Font)
+//                        ],
+//                      ),
+//                    ),
+//                  ),
+//                ),
+//              ),
+//            )
+//          ],
+//        ),
+//        Positioned.fill(
+//          child: Align(
+//            alignment: Alignment.centerLeft,
+//            child: _buildRoundShape(context, index),
+//          ),
+//        ),
+//      ],
+//    );
+//    return new Container(
+//      height: 124.0,
+//      margin: new EdgeInsets.only(left: 46.0, top: 8.0, right: 16.0, bottom: 8.0,),
+//      decoration: new BoxDecoration(
+//        color: Colors.white,
+//        shape: BoxShape.rectangle,
+//        borderRadius: new BorderRadius.circular(8.0),
+//        boxShadow: <BoxShadow>[
+//          new BoxShadow(
+//            color: Colors.black12,
+//            blurRadius: 10.0,
+//            offset: new Offset(0.0, 10.0),
+//          ),
+//        ],
+//      ),
+//    );
+
+    return new Container(
+        margin: const EdgeInsets.symmetric(
+          vertical: 16.0,
+          horizontal: 24.0,
+        ),
+        child: new Stack(
           children: <Widget>[
-            new Expanded(
-              child: new Container(
-                margin: const EdgeInsets.only(left: 16.0),
-                child: new Card(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => PoiDetailPage(poi: poi)));
-                    },
-                    child: new Container(
-                      padding: new EdgeInsets.only(left:36.0, top: 24.0, bottom: 24.0, right: 24.0),
-                      child: new Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          new Text("${poi.name}", style: _H1Font, maxLines: 1, overflow: TextOverflow.ellipsis),
-                          new Text("${poi.address}", style: _B1Font)
-                        ],
-                      ),
-                    ),
+
+
+            new Container(
+              height: 124.0,
+              margin: new EdgeInsets.only(left: 60.0),
+              padding: new EdgeInsets.only(left: 56.0, right: 16.0),
+              decoration: new BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.rectangle,
+                borderRadius: new BorderRadius.only(topRight: const Radius.circular(36.0), bottomRight: const Radius.circular(4.0)),
+                boxShadow: <BoxShadow>[
+                  new BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10.0,
+                    offset: new Offset(0.0, 10.0),
                   ),
-                ),
+                ],
+              ),
+            ),
+
+
+            new Container(
+              margin: new EdgeInsets.symmetric(
+//                  vertical: 16.0
+              ),
+              alignment: FractionalOffset.centerLeft,
+              child: new Container(
+                  width: 124.0,
+                  height: 124.0,
+                  decoration: new BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+//                    boxShadow: <BoxShadow>[
+//                      new BoxShadow(
+//                        color: Colors.black12,
+//                        blurRadius: 10.0,
+//                        offset: new Offset(10.0, .0),
+//                      ),
+//                    ],
+                  )),
+            ),
+
+            new Container(
+              height: 124.0,
+              margin: new EdgeInsets.only(left: 60.0, right: 16.0),
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Text("${poi.name}", style: _H1Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                  new Text("${poi.address}", style: _B1Font)
+                ],
               ),
             )
+
+
           ],
-        ),
-        Positioned.fill(
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: _buildRoundShape(context, index),
-          ),
-        ),
-      ],
+        )
     );
   }
 
