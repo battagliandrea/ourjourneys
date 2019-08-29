@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist_bloc.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist_state.dart';
@@ -8,7 +7,10 @@ import 'package:our_journeys/domain/bloc/poilist/poilist.dart';
 import 'package:our_journeys/domain/bloc/poilist/poilist_bloc.dart';
 import 'package:our_journeys/domain/model/models.dart';
 import 'package:our_journeys/presentation/views/map_page.dart';
-import 'package:our_journeys/presentation/views/poi_detail_page.dart';
+
+import 'package:our_journeys/presentation/utils/typography.dart' as Typography;
+import 'package:our_journeys/presentation/utils/dimens.dart' as Dimens;
+import 'package:our_journeys/presentation/utils/colors.dart' as OJColors;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //          PAGE
@@ -26,10 +28,7 @@ class PoiListPage extends StatefulWidget {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class _PoiListPageState extends State<PoiListPage> {
 
-  final TextStyle _H4Font = const TextStyle(color: Colors.black87, fontSize: 36.0, fontWeight: FontWeight.bold);
-  final TextStyle _H6Font = const TextStyle(color: Colors.black87, fontSize: 21.0, fontWeight: FontWeight.bold);
 
-  final TextStyle _B1Font = const TextStyle(color: Colors.black54, fontSize: 12.0, fontWeight: FontWeight.normal);
   final PoiBloc _postBloc = PoiBloc();
   final DayBloc _dayBloc = DayBloc();
 
@@ -47,6 +46,7 @@ class _PoiListPageState extends State<PoiListPage> {
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         floatingActionButton:
         new FloatingActionButton(
+          backgroundColor: OJColors.yellow,
           child: const Icon(Icons.map), onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => MapPage(day: this.widget.selectedDay)));
           },
@@ -61,13 +61,15 @@ class _PoiListPageState extends State<PoiListPage> {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildBottomAppBar() {
     return BottomAppBar(
+      elevation: 8.0,
+      color: OJColors.purple,
       shape: CircularNotchedRectangle(),
-      notchMargin: 8.0,
+      notchMargin: Dimens.standardHalfDistance,
       child: new Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          IconButton(icon: Icon(Icons.menu), onPressed: () {
+          IconButton(icon: Icon(Icons.menu), color: Colors.white, onPressed: () {
             _settingModalBottomSheet(context);
           },),
         ],
@@ -95,13 +97,13 @@ class _PoiListPageState extends State<PoiListPage> {
                     slivers: <Widget>[
                       new SliverToBoxAdapter(
                         child: new Container(
-                          padding: const EdgeInsets.only(top: 100.0, left: 64.0, right: 64.0),
-                          child: new Text("${state.day.getFormattedDate()}", style: _H4Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                          padding: const EdgeInsets.only(top: 100.0, left: Dimens.standardQuadrupleDistance, right: Dimens.standardQuadrupleDistance),
+                          child: new Text("${state.day.getFormattedDate()}", style: Typography.h4Font, maxLines: 1, overflow: TextOverflow.ellipsis),
                           height: 180,
                         ),
                       ),
                       new SliverPadding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        padding: const EdgeInsets.symmetric(vertical: Dimens.standardDistance),
                         sliver: new SliverFixedExtentList(
                           itemExtent: 152.0,
                           delegate: new SliverChildBuilderDelegate((context, index) =>
@@ -115,10 +117,6 @@ class _PoiListPageState extends State<PoiListPage> {
                 ),
               ],
             );
-
-//            return Center(
-//                child:
-//            );
           }
 
           else{
@@ -133,21 +131,21 @@ class _PoiListPageState extends State<PoiListPage> {
   Widget _buildRow(context, int index, Poi poi) {
     return new Container(
         margin: const EdgeInsets.symmetric(
-          vertical: 16.0,
-          horizontal: 24.0,
+          vertical: Dimens.standardDistance,
+          horizontal: Dimens.standardDistance,
         ),
         child: new Stack(
           children: <Widget>[
 
 
             new Container(
-              height: 124.0,
-              margin: new EdgeInsets.only(left: 60.0),
-              padding: new EdgeInsets.only(left: 56.0, right: 16.0),
+              height: Dimens.rowHeight,
+              margin: new EdgeInsets.only(left: Dimens.standardQuadrupleDistance),
+              padding: new EdgeInsets.only(left: Dimens.standardQuadrupleDistance, right: Dimens.standardDistance),
               decoration: new BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.rectangle,
-                borderRadius: new BorderRadius.only(topRight: const Radius.circular(36.0), bottomRight: const Radius.circular(4.0)),
+                borderRadius: new BorderRadius.only(topRight: const Radius.circular(Dimens.standardDoubleDistance), bottomRight: const Radius.circular(Dimens.standardQuarterDistance)),
                 boxShadow: <BoxShadow>[
                   new BoxShadow(
                     color: Colors.black12,
@@ -165,8 +163,8 @@ class _PoiListPageState extends State<PoiListPage> {
               ),
               alignment: FractionalOffset.centerLeft,
               child: new Container(
-                  width: 124.0,
-                  height: 124.0,
+                  width: Dimens.rowHeight,
+                  height: Dimens.rowHeight,
                   decoration: new BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
@@ -181,14 +179,14 @@ class _PoiListPageState extends State<PoiListPage> {
             ),
 
             new Container(
-              height: 124.0,
-              margin: new EdgeInsets.only(left: 60.0, right: 16.0),
+              height: Dimens.rowHeight,
+              margin: new EdgeInsets.only(left: Dimens.standardQuadrupleDistance, right: Dimens.standardDistance),
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  new Text("${poi.name}", style: _H6Font, maxLines: 1, overflow: TextOverflow.ellipsis),
-                  new Text("${poi.address}", style: _B1Font)
+                  new Text("${poi.name}", style: Typography.h6Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                  new Text("${poi.address}", style: Typography.b1Font)
                 ],
               ),
             )
@@ -211,14 +209,11 @@ class _PoiListPageState extends State<PoiListPage> {
 
                 if(state is DaysLoaded){
                   return new Container(
-                      child: new ListView.separated(
-                          separatorBuilder: (context, index) => Divider(
-                            color: Colors.blueGrey,
-                          ),
-                          padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 16.0),
+                    padding: EdgeInsets.symmetric(horizontal: Dimens.standardDistance),
+                      child: new ListView.builder(
                           itemCount: state.days.length,
                           itemBuilder: (BuildContext _context, int i) {
-                            return _buildDayRow(_context, state.days[i]);
+                            return _buildDayRow(_context, i, state.days.length, state.days[i]);
                           }
                       )
                   );
@@ -234,21 +229,84 @@ class _PoiListPageState extends State<PoiListPage> {
     );
   }
 
-  Widget _buildDayRow(context, Day day) {
-    return new ListTile(
-      leading: Icon(Icons.calendar_today),
-      title: Text("${day.getFormattedDate()}"),
-      onTap: () => {
-        Navigator.pop(context),
-        _postBloc.dispatch(FetchPoi(day.index)),
-        //_dayBloc.dispatch(FetchDays(day.index))
-      },
+  Widget _buildDayRow(context, int index, int lastIndex, Day day) {
+    return new Container(
+        height: 64.0,
+        child: new Stack(
+          children: <Widget>[
+
+            _buildPoint(context, index, lastIndex),
+
+            new Container(
+              alignment: FractionalOffset.centerLeft,
+              child: new Container(
+                  width: Dimens.circleDimens,
+                  height: Dimens.circleDimens,
+                  decoration: new BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: OJColors.yellow,
+                  )),
+            ),
+
+
+            new GestureDetector(
+              child: new Container(
+                margin: new EdgeInsets.only(left: Dimens.standardQuadrupleDistance, right: Dimens.standardDistance),
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Text("${day.getFormattedDate()}", style: Typography.h6Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                  ],
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                _postBloc.dispatch(FetchPoi(day.index));
+                _dayBloc.dispatch(FetchDays(day.index));
+              },
+            )
+
+
+          ],
+        )
     );
   }
+
+
+  Widget _buildPoint(BuildContext context, int index, int lastIndex,) {
+    Widget child;
+    if (index == 0) {
+      child = new Container(
+        margin: EdgeInsets.only(top: Dimens.standardDoubleDistance, left: Dimens.standardHalfDistance),
+        width: Dimens.lineWidth,
+        height: Dimens.standardDoubleDistance,
+        color: OJColors.purple,
+      );
+    } else if(index == lastIndex-1) {
+      child = new Container(
+        margin: EdgeInsets.only(bottom: Dimens.standardDoubleDistance, left: Dimens.standardHalfDistance),
+        width: Dimens.lineWidth,
+        height: Dimens.standardDoubleDistance,
+        color: OJColors.purple,
+      );
+    } else {
+      child = new Container(
+        margin: EdgeInsets.only(left: Dimens.standardHalfDistance),
+        width: Dimens.lineWidth,
+        height: Dimens.standardQuadrupleDistance,
+        color: OJColors.purple,
+      );
+    }
+    return child;
+  }
+
 
   void _showInSnackBar(context, String value) {
     Scaffold.of(context).showSnackBar(new SnackBar(
         content: new Text(value)
     ));
   }
+
+
 }
