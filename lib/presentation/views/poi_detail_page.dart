@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:our_journeys/domain/model/models.dart';
+import 'package:our_journeys/presentation/utils/colors.dart';
+import 'package:our_journeys/presentation/utils/dimens.dart';
+import 'package:our_journeys/presentation/utils/typography.dart';
+import 'package:our_journeys/presentation/widgets/horizontal_line.dart';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //          PAGE
@@ -18,8 +22,7 @@ class PoiDetailPage extends StatefulWidget {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class _PoiDetailPageState extends State<PoiDetailPage> {
 
-  final TextStyle _H1Font = const TextStyle(color: Colors.black87, fontSize: 21.0, fontWeight: FontWeight.bold);
-  final TextStyle _B1Font = const TextStyle(color: Colors.black38, fontSize: 14.0, fontWeight: FontWeight.bold);
+  var top = 0.0;
 
   @override
   void initState() {
@@ -29,7 +32,7 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: _buildCollapsingLayout(widget.poi)
+        body: _buildCollapsingLayout(widget.poi)
     );
   }
 
@@ -50,17 +53,24 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildAppBar(Poi poi) {
     return SliverAppBar(
-      expandedHeight: 250.0,
+      expandedHeight: OJDimens.expandableHeaderHeight,
       floating: true,
       pinned: true,
       snap: false,
-      flexibleSpace: new FlexibleSpaceBar(
-          centerTitle: true,
-          title: new Text(widget.poi.name, maxLines: 1, overflow: TextOverflow.ellipsis),
-          background: Image.network(
-            poi.image,
-            fit: BoxFit.cover,
-          )
+      flexibleSpace: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+
+            top = constraints.biggest.height;
+
+            return new FlexibleSpaceBar(
+                centerTitle: true,
+                title: AnimatedOpacity(
+                    duration: Duration(milliseconds: 300),
+                    opacity: top < 200 ? 1.0 : 0.0,
+                    child: Text("${widget.poi.name}", style: OJTypography.h6FontSecondary)
+                ),
+                background: Image.network(poi.image,fit: BoxFit.cover));
+          }
       ),
     );
   }
@@ -70,16 +80,27 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildBody(Poi poi) {
     return new SliverToBoxAdapter(
-      child: new Container(
-        padding: new EdgeInsets.only(left: 16.0, right: 16.0, top: 20.0, bottom: 20.0),
-        child: new Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            new Text("${poi.address}", style: _H1Font),
-            new Text("${poi.description}", style: _B1Font),
-          ],
-        ),
-      )
+        child: new Container(
+          padding: new EdgeInsets.only(left: 16.0, right: 16.0, top: 20.0, bottom: 20.0),
+          child: new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new Text("${poi.address}", style: OJTypography.h6FontMain),
+              new HorizontalLine(
+                color: OJColors.yellow,
+                height: OJDimens.lineHorizontalHeight,
+                width: OJDimens.lineHorizontalWidth,
+                paddingTop: OJDimens.standardHalfDistance,
+                paddingBottom: OJDimens.standardHalfDistance,
+                radiusTopLeft: Radius.circular(OJDimens.radius),
+                radiusBottomLeft: Radius.circular(OJDimens.radius),
+                radiusTopRight: Radius.circular(OJDimens.radius),
+                radiusBottomRight: Radius.circular(OJDimens.radius),
+              ),
+              new Text("${poi.description}", style: OJTypography.b1FontMain),
+            ],
+          ),
+        )
     );
   }
 

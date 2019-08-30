@@ -5,6 +5,9 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist_bloc.dart';
 import 'package:our_journeys/domain/model/day.dart';
+import 'package:our_journeys/presentation/utils/colors.dart';
+import 'package:our_journeys/presentation/utils/dimens.dart';
+import 'package:our_journeys/presentation/utils/typography.dart';
 
 class MapPage extends StatefulWidget {
 
@@ -38,26 +41,23 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: _buildAppBar(),
       body: new Stack(
         children: <Widget>[
           _buildMapView(),
-          _buildAppBar(),
-
         ],
       )
     );
   }
 
   Widget _buildAppBar() {
-    return new Positioned(
-        top: 0.0,
-        left: 0.0,
-        right: 0.0,
-        child: new AppBar(
-            elevation: 0,
-            backgroundColor: Colors.black12,
-            title: new Text("${widget.day.getFormattedDate()}")
-        )
+    return new AppBar(
+          iconTheme: IconThemeData(
+            color: OJColors.white
+          ),
+          elevation: OJDimens.elevationNope,
+          backgroundColor: OJColors.overlayColor,
+          title: new Text("${widget.day.getFormattedDate()}", style: OJTypography.h6FontSecondary)
     );
   }
 
@@ -78,7 +78,7 @@ class _MapPageState extends State<MapPage> {
           title: p.name,
           snippet: p.address,
         ),
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       ))
     });
 
@@ -86,7 +86,7 @@ class _MapPageState extends State<MapPage> {
       polylineId: PolylineId(this.widget.day.index.toString()),
       visible: true,
       points: points,
-      color: Colors.orange,
+      color: OJColors.purple,
     ));
 
     return GoogleMap(

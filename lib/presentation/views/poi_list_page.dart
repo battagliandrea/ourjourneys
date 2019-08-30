@@ -10,6 +10,7 @@ import 'package:our_journeys/presentation/utils/colors.dart';
 import 'package:our_journeys/presentation/utils/dimens.dart';
 import 'package:our_journeys/presentation/utils/typography.dart';
 import 'package:our_journeys/presentation/views/map_page.dart';
+import 'package:our_journeys/presentation/views/poi_detail_page.dart';
 import 'package:our_journeys/presentation/widgets/horizontal_line.dart';
 
 
@@ -100,7 +101,7 @@ class _PoiListPageState extends State<PoiListPage> {
                       new SliverToBoxAdapter(
                         child: new Container(
                           padding: const EdgeInsets.only(top: 100.0, left: OJDimens.standardQuadrupleDistance, right: OJDimens.standardQuadrupleDistance),
-                          child: new Text("${state.day.getFormattedDate()}", style: OJTypography.h4Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                          child: new Text("${state.day.getFormattedDate()}", style: OJTypography.h4FontMain, maxLines: 1, overflow: TextOverflow.ellipsis),
                           height: 150,
                         ),
                       ),
@@ -142,81 +143,86 @@ class _PoiListPageState extends State<PoiListPage> {
   }
 
   Widget _buildRow(context, int index, Poi poi) {
-    return new Container(
-        margin: const EdgeInsets.symmetric(
-          vertical: OJDimens.standardDistance,
-          horizontal: OJDimens.standardDistance,
-        ),
-        child: new Stack(
-          children: <Widget>[
+    return InkWell(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => PoiDetailPage(poi: poi)));
+      },
+      child: new Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: OJDimens.standardDistance,
+            horizontal: OJDimens.standardDistance,
+          ),
+          child: new Stack(
+            children: <Widget>[
 
 
-            new Container(
-              height: OJDimens.rowHeight,
-              margin: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance),
-              padding: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance, right: OJDimens.standardDistance),
-              decoration: new BoxDecoration(
-                color: OJColors.cardColor,
-                shape: BoxShape.rectangle,
-                borderRadius: new BorderRadius.only(topRight: const Radius.circular(OJDimens.standardDoubleDistance), bottomRight: const Radius.circular(OJDimens.standardQuarterDistance)),
-                boxShadow: <BoxShadow>[
-                  new BoxShadow(
-                    color: OJColors.shadowColor,
-                    blurRadius: 10.0,
-                    offset: new Offset(-10.0, 0.0),
-                  ),
-                ],
+              new Container(
+                height: OJDimens.rowPoiHeight,
+                margin: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance),
+                padding: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance, right: OJDimens.standardDistance),
+                decoration: new BoxDecoration(
+                  color: OJColors.cardColor,
+                  shape: BoxShape.rectangle,
+                  borderRadius: new BorderRadius.only(topRight: const Radius.circular(OJDimens.standardDoubleDistance), bottomRight: const Radius.circular(OJDimens.standardQuarterDistance)),
+                  boxShadow: <BoxShadow>[
+                    new BoxShadow(
+                      color: OJColors.shadowColor,
+                      blurRadius: 10.0,
+                      offset: new Offset(-10.0, 0.0),
+                    ),
+                  ],
+                ),
               ),
-            ),
 
 
-            new Container(
-              margin: new EdgeInsets.symmetric(
+              new Container(
+                margin: new EdgeInsets.symmetric(
 //                  vertical: 16.0
+                ),
+                alignment: FractionalOffset.centerLeft,
+                child: new Container(
+                    width: OJDimens.rowPoiHeight,
+                    height: OJDimens.rowPoiHeight,
+                    decoration: new BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: OJColors.cardColor,
+                      boxShadow: <BoxShadow>[
+                        new BoxShadow(
+                          color: OJColors.shadowColor,
+                          blurRadius: 10.0,
+                          offset: new Offset(-15.0, 0.0),
+                        ),
+                      ],
+                    )),
               ),
-              alignment: FractionalOffset.centerLeft,
-              child: new Container(
-                  width: OJDimens.rowHeight,
-                  height: OJDimens.rowHeight,
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: OJColors.cardColor,
-                    boxShadow: <BoxShadow>[
-                      new BoxShadow(
-                        color: OJColors.shadowColor,
-                        blurRadius: 10.0,
-                        offset: new Offset(-15.0, 0.0),
-                      ),
-                    ],
-                  )),
-            ),
 
-            new Container(
-              height: OJDimens.rowHeight,
-              margin: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance, right: OJDimens.standardDistance),
-              child: new Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  new Text("${poi.name}", style: OJTypography.h6Font, maxLines: 1, overflow: TextOverflow.ellipsis),
-                  new HorizontalLine(
-                    color: OJColors.yellow,
-                    height: OJDimens.lineHorizontalSmallHeight,
-                    width: OJDimens.lineHorizontalWidth,
-                    paddingTop: OJDimens.standardHalfDistance,
-                    paddingBottom: OJDimens.standardHalfDistance,
-                    radiusTopLeft: Radius.circular(OJDimens.radius),
-                    radiusBottomLeft: Radius.circular(OJDimens.radius),
-                    radiusTopRight: Radius.circular(OJDimens.radius),
-                    radiusBottomRight: Radius.circular(OJDimens.radius),
-                  ),
-                  new Text("${poi.address}", style: OJTypography.b1Font)
-                ],
-              ),
-            )
+              new Container(
+                height: OJDimens.rowPoiHeight,
+                margin: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance, right: OJDimens.standardDistance),
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Text("${poi.name}", style: OJTypography.h6FontMain, maxLines: 1, overflow: TextOverflow.ellipsis),
+                    new HorizontalLine(
+                      color: OJColors.yellow,
+                      height: OJDimens.lineHorizontalHeight,
+                      width: OJDimens.lineHorizontalWidth,
+                      paddingTop: OJDimens.standardHalfDistance,
+                      paddingBottom: OJDimens.standardHalfDistance,
+                      radiusTopLeft: Radius.circular(OJDimens.radius),
+                      radiusBottomLeft: Radius.circular(OJDimens.radius),
+                      radiusTopRight: Radius.circular(OJDimens.radius),
+                      radiusBottomRight: Radius.circular(OJDimens.radius),
+                    ),
+                    new Text("${poi.address}", style: OJTypography.b1FontMain)
+                  ],
+                ),
+              )
 
-          ],
-        )
+            ],
+          )
+      ),
     );
   }
 
@@ -233,7 +239,6 @@ class _PoiListPageState extends State<PoiListPage> {
 
                 if(state is DaysLoaded){
                   return new Container(
-                    padding: EdgeInsets.symmetric(horizontal: OJDimens.standardDistance),
                       child: new ListView.builder(
                           itemCount: state.days.length,
                           itemBuilder: (BuildContext _context, int i) {
@@ -254,36 +259,36 @@ class _PoiListPageState extends State<PoiListPage> {
   }
 
   Widget _buildDayRow(context, int index, int lastIndex, Day day) {
-    return new Container(
-        height: 64.0,
-        child: new Stack(
-          children: <Widget>[
+    return InkWell(
+      onTap: (){
+        Navigator.pop(context);
+        _postBloc.dispatch(FetchPoi(day.index));
+        _dayBloc.dispatch(FetchDays(day.index));
+      },
+      child: new Container(
+          padding: EdgeInsets.symmetric(horizontal: OJDimens.standardDistance),
+          height: OJDimens.rowDayHeight,
+          child: new Stack(
+            children: <Widget>[
 
-            _buildDayRowLine(context, index, lastIndex),
+              _buildDayRowLine(context, index, lastIndex),
 
-            _buildDayRowPoint(context),
+              _buildDayRowPoint(context),
 
-            new GestureDetector(
-              child: new Container(
+              new Container(
                 margin: new EdgeInsets.only(left: OJDimens.standardQuadrupleDistance, right: OJDimens.standardDistance),
                 child: new Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    new Text("${day.getFormattedDate()}", style: OJTypography.h6Font, maxLines: 1, overflow: TextOverflow.ellipsis),
+                    new Text("${day.getFormattedDate()}", style: OJTypography.h6FontMain, maxLines: 1, overflow: TextOverflow.ellipsis),
                   ],
                 ),
               ),
-              onTap: () {
-                Navigator.pop(context);
-                _postBloc.dispatch(FetchPoi(day.index));
-                _dayBloc.dispatch(FetchDays(day.index));
-              },
-            )
 
-
-          ],
-        )
+            ],
+          )
+      ),
     );
   }
 

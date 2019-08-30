@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_journeys/injection/dependency_injection.dart';
+import 'package:our_journeys/presentation/utils/colors.dart';
 import 'package:our_journeys/presentation/views/poi_list_page.dart';
 
 void main() => runApp(new MyApp());
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
 
     return new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(),
+      theme: new ThemeData(
+        primaryColor: OJColors.purple
+      ),
       home: new PoiListPage(),
     );
   }
