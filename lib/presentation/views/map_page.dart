@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist.dart';
 import 'package:our_journeys/domain/bloc/daylist/daylist_bloc.dart';
@@ -40,6 +41,7 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: _buildAppBar(),
       body: new Stack(
@@ -55,6 +57,7 @@ class _MapPageState extends State<MapPage> {
           iconTheme: IconThemeData(
             color: OJColors.white
           ),
+          brightness: Brightness.light,
           elevation: OJDimens.elevationNope,
           backgroundColor: OJColors.overlayColor,
           title: new Text("${widget.day.getFormattedDate()}", style: OJTypography.h6FontSecondary)

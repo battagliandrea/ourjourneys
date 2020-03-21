@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:our_journeys/domain/model/models.dart';
 import 'package:our_journeys/presentation/utils/colors.dart';
 import 'package:our_journeys/presentation/utils/dimens.dart';
@@ -53,6 +54,7 @@ class _PoiDetailPageState extends State<PoiDetailPage> {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Widget _buildAppBar(Poi poi) {
     return SliverAppBar(
+      brightness: Brightness.light,
       expandedHeight: OJDimens.expandableHeaderHeight,
       floating: true,
       pinned: true,

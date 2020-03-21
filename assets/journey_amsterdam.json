@@ -20,9 +20,9 @@
         {
           "id": 2,
           "name": "Basilica di San Nicola",
-          "description": "",
+          "description": "Questo capolavoro cattolico si trova proprio al centro di Amsterdam ed è davvero una vista da non perdere. È stato costruito attorno al 1887 e la sua architettura sfrutta elementi sia neo-barocchi che neo-rinascimentali; nel 2012 è stata elevata al grado di Basilica minore.\n\nTra le torri c'è un bellissimo rosone (una finestra circolare, di solito divisa da altri materiali per ottenere vari disegni). Oltre agli affreschi religiosi sulle pareti interni l'edificio mette in mostra anche la corona di Massimiliano I.\n\nVengono celebrate ancora molto messe (perfino in inglese) alle quali potrai partecipare per sperimentare l'atmosfera serena della chiesa mentre pratichi la tua fede. Puoi anche confessarti in inglese o in olandese.\n\nSi trova a due minuti dalla fermata dell'autobus Prins Hendrikkade, linee 32-35, 301, 304, 306-308, 312-316 e 319. Non scordarti la tua fotocamera, dato che è permesso scattare foto senza flash, in modo da poter ottenere un ricordo da portare a casa con te. Togli la suoneria al cellulare mentre ti trovi nell'edificio. Durante le funzioni non sono permesse visite turistiche.",
           "address": "Prins Hendrikkade 73, 1012 AD Amsterdam, Paesi Bassi",
-          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
+          "image": "https://st2.depositphotos.com/3200701/11584/i/950/depositphotos_115846064-stock-photo-basilica-of-st-nicholas-in.jpg",
           "coordinates": {
             "lat": 52.376570,
             "lon": 4.900760
@@ -31,12 +31,45 @@
         {
           "id": 3,
           "name": "Chiesa Vecchia",
-          "description": "",
+          "description": "La Oude Kerk (Chiesa Vecchia) assunse questo nome dopo la costruzione della Nieuwe Kerk (Chiesa Nuova). E’ l’edificio religioso più antico della città di Amsterdam situato, paradossalmente, a pochi passi dal Quartiere a luci rosse. La sua origine risale al XIII secolo quando una piccola chiesa in legno dedicata a San Nicola, protettore dei naviganti e patrono di Amsterdam, venne eretta sul terreno sabbioso di un cimitero.\n\nRicostruita nel 1306, ampliata nel corso del tempo con l’aggiunta di numerose cappelle, solo con gli ultimi interventi realizzati nel Cinquecento – tra questi la costruzione del campanile con la guglia in legno – la chiesa ha assunto la sua attuale fisionomia tardogotica. Dal 1955 al 1979 la chiesa è stata oggetto di importanti lavori di restauro. L’interno luminoso e imponente della basilica a tre navate (bella quella centrale con volta lignea a crociera) fu pesantemente danneggiato dai calvinisti che nel 1566, in segno di protesta contro le leggi che proibivano loro di professare la loro religione, distrussero statue, effigi ed opere d’arte. L'”opera” di devastazione fu completata nel 1578 quando la chiesa passò ai protestanti che cancellarono tutte le decorazioni e la convertirono in un loro punto di ritrovo. Fortunatamente non tutto è andato perduto. Il pavimento lapidario della chiesa accoglie le spoglie di illustri personaggi olandesi (il pittore Pieter Aertsz, lo scrittore Roemer Visscher, l’organista Jan Sweelinck e Frans Banning Cocq, la figura centrale del dipinto La Ronda Notturna di Rembrandt; nella navata nord è sepolta invece Saskia van Uylenburg, prima moglie di Rembrandt). La cappella laterale di Nostra Signora conserva splendide vetrate istoriate rinascimentali del 1555, disegnate da Pieter Aertsz. Da non perdere lo straordinario organo di C. Muller del 1724 in legno di quercia, bellissimo e dallo splendido suono.\nOgni domenica, alle ore 11,  viene celebrata la funzione secondo il rito riformato olandese. Grazie all’ottima acustica, la Oude Kerk ospita concerti d’organo e vespri corali e fa da cornice a manifestazioni ed eventi culturali, tra cui la famosa esibizione fotografica annuale della World Press Photo. Dall’alto dei 70 metri della torre campanaria dalla forma ottagonale (visita guidata da aprile a settembre, gio. ven. e sab. dalle 13 alle 17, Euro 7) si gode di un magnifico panorama della città e, allo scoccare del quarto d’ora il sistema di carillon con 47 campane installato nel 1658 regala piacevoli melodie.",
           "address": "Oudekerksplein 23, 1012 GX Amsterdam, Paesi Bassi",
-          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Okerk2.jpg",
           "coordinates": {
             "lat": 52.374120,
             "lon": 4.897760
+          }
+        },
+        {
+          "id": 4,
+          "name": "Statua di Alida",
+          "description": "Scultura di bronzo di Alida Bosshardt (Major Bosshardt) nel quartiere a luci rosse, Amsterdam, Olanda. Statua è stata fatta da Peter de Leeuwe. Durante la seconda guerra mondiale aiutò 75 bambini ebrei orfani a sfuggire alle persecuzioni nazista (fu insignita per questo del titolo di “Giusta tra le nazioni”). Come se non bastasse, lavorò nello stesso periodo nel quartiere a luci rosse tramite l’esercito della salvezza,  aiutando prostitute, senzatetto e tossicodipendenti.",
+          "address": "Oudezijds Voorburgwal 14, 1012 AK Amsterdam, Paesi Bassi",
+          "image": "https://l450v.alamy.com/450vit/en5ncr/alida-bosshardt-principali-bosshardt-statua-amsterdam-en5ncr.jpg",
+          "coordinates": {
+            "lat": 52.37554,
+            "lon": 4.8998
+          }
+        },
+        {
+          "id": 5,
+          "name": "Quartiere a Luci Rosse",
+          "description": "Essere uno dei principali porti per il commercio internazionale sin dal medioevo ha reso Amsterdam una calamita per il mestiere più antico del mondo. Già nel 1300, alcune donne si aggiravano tra i vicoli portando delle lanterne rosse, la cui luce le rendeva particolarmente avvenenti, per incontrare i marinai nei pressi del porto. Nella stessa zona hanno, quindi, iniziato a proliferare bar e locali di intrattenimento. La prostituzione, tuttavia, è rimasta illegale fino al 1810, mentre i bordelli sono stati legalizzati soltanto nel 2000.\n\nMa la questione resta in continua evoluzione: dal 2007 sono state attuate delle misure per ripulire l’area riducendo il numero di finestre illuminate di rosso col fine di combattere lo sfruttamento della prostituzione, il traffico di esseri umani e il riciclaggio di denaro, che restano attività illegali.  Il “project 1012”, che prende il nome dal CAP dell’area, incoraggia studi di design, gallerie d’arte, bar e altre imprese creative a aprire qui la propria attività. Nel 2013 è stata alzata l’età minima per la prostituzione, che è passata da 18 a 21 anni, ed è stato istituito l’obbligo di chiudere le vetrine tra le 6.00 e le 8.00 di mattina.",
+          "address": "Oudezijds Achterburgwal 60h, 1012 DP Amsterdam, Paesi Bassi",
+          "image": "https://images.lonelyplanetitalia.it/uploads/sera-nel-quartiere-a-luci-rosse-di-amsterdam-oland-451.jpg?q=80&p=slider&s=22c1966a069a452eaebfa13267692721",
+          "coordinates": {
+            "lat": 52.37443,
+            "lon": 4.90028
+          }
+        },
+        {
+          "id": 6,
+          "name": "Damrak",
+          "description": "Dalla stazione ferroviaria centrale di Amsterdam a Piazza Dam, il Damrak è spesso chiamato il \"tappeto rosso\" di Amsterdam. Perché è il primo sito, in tutta la sua vivace gloria, che i visitatori vedono quando escono dal treno. Il Damrak, come il centro della città, è una strada trafficata, piena di negozi di souvenir, hotel e ristoranti. Qui vivono anche due edifici famosi: il Beurs van Berlage (l'ex borsa) e il famoso centro commerciale, il Bijenkorf. Dalla stazione, la strada termina a Piazza Dam, sede di eventi e manifestazioni di ogni genere. Il Damrak è la foce originale del fiume Amstel - rak è una portata o uno specchio d'acqua diretto. Nel diciannovesimo secolo, il canale fu riempito, ad eccezione delle banchine del canale-barca sul lato est. Prima di raggiungere la Borsa vedrai uno specchio d'acqua. Questo è tutto ciò che rimane del vecchio porto. Le case a due spioventi che si affacciano sull'acqua sono tra le più pittoresche della città. Oggi l'acqua è la patria di alcuni dei numerosi operatori di barche per tour sui canali di Amsterdam.\n\nLeggi altro su Attività per Damrak 2019 - Viator - https://www.viator.com/it-IT/Amsterdam-attractions/Damrak/d525-a782?mcid=56757",
+          "address": "Amsterdam, Paesi Basse",
+          "image": "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/134370_Amsterdam_Damrak_782.jpg",
+          "coordinates": {
+            "lat": 52.37709,
+            "lon": 4.89798
           }
         }
       ]
@@ -47,17 +80,223 @@
       "poi": [
         {
           "id": 1,
-          "name": "Amsterdam Centraal",
-          "description": "",
-          "address": "Stationsplein, 1012 AB Amsterdam, Paesi Bassi",
-          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Trasporti/Amsterdam-stazione-centrale.jpg",
+          "name": "Museo di Van Gogh",
+          "description": "Il museo Van Gogh è costituito da due edifici interconnessi: l'edificio principale, progettato da Gerrit Rietveld e aperto nel 1973, e l'ala nuova, progettata dall'architetto Kishō Kurokawa, i cui lavori sono stati completati nel 1999. Il 5 settembre 2015 sono terminati i lavori per una nuova moderna entrata al museo, pratica per collegare i due noti musei adiacenti del Rijksmuseum e Stedelijk Museum. \n\nIl 7 dicembre 2002 due celebri dipinti dell'artista vennero rubati dal museo. Il furto avvenne poco prima delle 8 del mattino. Il ladro (o i ladri) si è calato dal tetto e ha asportato le tele intitolate Una congregazione lascia la chiesa riformata di Nuenen del 1885 e La spiaggia di Scheveningen prima di una tempesta del 1882. Le due opere sono rispettivamente di un formato 41 per 32 centimetri e 34 per 51. Le tele sono state ritrovate 14 anni dopo, il 30 settembre 2016, in seguito ad una perquisizione dalla Guardia di Finanza italiana nel corso di un'operazione contro un gruppo di narcotrafficanti in affari con il clan camorristico degli Amato-Pagano, i cosiddetti scissionisti attivi nelle zone di Secondigliano e Scampia (Napoli). I dipinti erano custoditi nella cassaforte di uno degli arrestati e sono considerati di valore inestimabile. \n\nLa collezione comprende opere che documentano le varie fasi della vita di Van Gogh, dall'infanzia, ai vari stadi emotivi, fino alla morte. Tra le opere possedute vi sono I mangiatori di patate, La camera di Vincent ad Arles e una delle varie realizzazioni de I Girasoli.",
+          "address": "Museumplein 6, 1071 DJ Amsterdam, Paesi Bassi",
+          "image": "https://cdn.ejamo.it/it/wp-content/uploads/sites/20/museo-van-gogh-esterno.jpg",
           "coordinates": {
-            "lat": 52.378100,
-            "lon": 4.900020
+            "lat": 52.35793,
+            "lon": 4.88132
+          }
+        },
+        {
+          "id": 2,
+          "name": "Rijksmuseum",
+          "description": "Il Rijksmuseum Amsterdam (Museo Statale di Amsterdam), spesso chiamato semplicemente Rijksmuseum, è un museo che si trova in Stadhouderskade, 42 ad Amsterdam nei Paesi Bassi. \n\nIl museo fu fondato nel 1800 a L'Aia, per esporre le collezioni degli statolder olandesi, sull'esempio francese. Allora era noto come Galleria Nazionale d'Arte (in olandese: Nationale Kunst-Gallerij). Nel 1808 il museo fu trasferito ad Amsterdam per ordine di Luigi Napoleone, nipote di Napoleone Bonaparte. I dipinti di proprietà della città, ad esempio La ronda di notte di Rembrandt, divennero parte della collezione.\n\n Nel 1863 fu indetta una gara per progettare una nuova sede per il Rijksmuseum, ma nessuna delle proposte fu ritenuta sufficientemente di qualità. Anche Pierre Cuypers partecipò alla gara, ottenendo il secondo posto con il suo progetto. Nel 1876 fu tenuta una nuova competizione, e questa volta Pierre Cuypers vinse. Il progetto era una combinazione di elementi gotici e rinascimentali. La costruzione ebbe inizio il 1º ottobre 1876. Sia all'interno che all'esterno, l'edificio era riccamente decorato con chiari riferimenti alla storia dell'arte olandese. Un'altra gara fu tenuta per queste decorazioni. I vincitori risultarono essere B. van Hove and J.F. Vermeylen per le sculture, G. Sturm per le mattonelle e i dipinti e W.F. Dixon per le vetrate. Il museo fu aperto in questa nuova sede il 13 luglio 1885.\n\n Nel 1890 fu aggiunto al museo un edificio costruito con i resti di alcuni edifici demoliti, in modo da dare uno sguardo complessivo sull'architettura olandese. Nel 1906 fu riscostruita la sala che ospita la Ronda di notte. Gli interni subirono maggiori cambiamenti: tra gli anni venti e gli anni cinquanta la maggior parte delle pareti variopinte fu ridipinta e negli anni sessanta furono costruite alcune sale da esposizione e dei pavimenti all'interno dei due cortili. L'edificio ha subito alcuni minori rimaneggiamenti e restauri nel 1984, 1995-96 e 2000.\n\nDal 2003 il Rijksmuseum fu ristrutturato e rinnovato basandosi sui progetti degli architetti spagnoli Antonio Cruz e Antonio Ortiz. La maggior parte delle vecchie decorazioni fu restaurata e i pavimenti nei cortili furono rimossi. Durante questi lavori rimasero esposti solo alcuni dipinti della collezione permanente, in un'esposizione intitolata I capolavori, nell'edificio costruito con i frammenti dei palazzi demoliti, chiamato Ala Philips. Il Rijksmuseum ristrutturato è stato inaugurato nel 2013.",
+          "address": "Museumstraat 1, 1071 XX Amsterdam, Paesi Bassi",
+          "image": "https://www.lockerpoint.com/wp-content/uploads/rijksmuseum.jpg",
+          "coordinates": {
+            "lat": 52.35994,
+            "lon": 4.88539
+          }
+        },
+        {
+          "id": 3,
+          "name": "Hard rock cafe Amsterdam",
+          "description": "Hard Rock Cafe, è una catena di ristoranti tematici fondata nel 1971 a Londra. Il marchio è poi diventato celebre in tutto il mondo grazie all'ampia diffusione dei Cafe, che sono presenti in circa 191 luoghi in 59 paesi del mondo. Nel 2007 l'azienda è stata acquistata dai Seminole, tribù di nativi americani, e la sede è stata spostata a Orlando.\n\nTra i più illustri oggetti esposti vi sono le chitarre di Paul Stanley, John Lennon, George Harrison, Noel Gallagher, Elvis Presley, Jimi Hendrix, Eric Clapton, Jimmy Page, Lou Reed, Johnny Cash, Angus Young, Pete Townshend, B.B. King, i pantaloni di Jim Morrison, Freddie Mercury e Michael Jackson, abiti di scena di Elton John, Madonna, Britney Spears e Prince, più innumerevoli batterie, dischi d'oro e di platino, spartiti scritti a mano, poster, manifesti e perfino due porte, quella degli studi di Abbey Road e quella del numero 3 di Savile Road a Londra, entrambe legate ai Beatles.\n\nNel corso degli anni la società ha deciso di creare una propria serie di gadget e souvenir che spaziano dalle spillette ai giubbotti in pelle. Si dice che la famosa maglietta bianca con il marchio e la città dell'Hard Rock Cafe dove è stata comprata sia il souvenir più venduto al mondo, con dieci milioni di magliette vendute ogni anno.\n\nStelle come Elton John, Aerosmith, Chuck Berry e Sting hanno cantato nei ristoranti",
+          "address": "Max Euweplein 57-61, 1017 MA Amsterdam, Paesi Bassi",
+          "image": "https://media-cdn.tripadvisor.com/media/photo-s/05/6a/82/bf/canal-side.jpg",
+          "coordinates": {
+            "lat": 52.36208,
+            "lon": 4.88299
+          }
+        },
+        {
+          "id": 4,
+          "name": "Apple Amsterdam",
+          "description": "Just Apple Store",
+          "address": "Hirschgebouw, Leidseplein 25, 1017 PS Amsterdam, Paesi Bassi",
+          "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/08/Apple-Store-Amsterdam.jpg",
+          "coordinates": {
+            "lat": 52.36355,
+            "lon": 4.88242
+          }
+        },
+        {
+          "id": 5,
+          "name": "De Krijtberg",
+          "description": "De Krijtberg – propriamente Sint Franciscus Xaveriuskerk – è una chiesa cattolica nel centro storico di Amsterdam. Costruita nel 1881 in stile neogotico per sostituire edifici precedenti, la chiesa rappresenta una delle sedi più antiche e significative dei Gesuiti nei Paesi Bassi. \n\nNel 1628, il gesuita fiammingo Pieter Laurenz (1588-1664) fondò in una casa privata sul canale (gracht) Singel una cappella privata, in cui si stabilì nel 1654 una comunità cattolica. Siccome in quel periodo la pratica libera della religione non era concessa ai cattolici nei Paesi Bassi, la comunità operò in segreto, e l'edificio non era riconoscibile esteriormente come santuario. La sala parrocchiale, una tipica Schuilkerk (\"chiesa nascosta\"), occultata dietro la facciata di un palazzo mercantile, era dedicata a San Francesco Saverio. Il suo nome popolare De Crytberghen (olandese per \"Le rocce cretacee\") era dovuto alle Bianche sciogliere di Dover (Inghilterra): il proprietario precedente della casa, un imprenditore di navigazione marittima, aveva gestito collegamenti marittimi di traghetti sulla costa meridionale d'Inghilterra e aveva intitolato la sua casa secondo la destinazione delle sue navi. Benché le autorità pubbliche si fossero accorte presto dell'alterata funzione della casa, la presenza dei cattolici e la loro pratica segreta della religione fu tacitamente tollerata. A causa dell'affluenza nella parrocchia, questa prima cappella fu sostituita da una più grande nel 1677, che però rimase nascosta, similarmente come l'edificio precedente, discretamente dietro la facciata borghese. Anche quando l'ordine dei gesuiti fu proibito nei Paesi Bassi nel 1708 e poco dopo, nel 1773, abolito in tutta l'Europa, il santuario rimase in funzione.\n\nNel 1796 fu concesso ai cattolici nei Paesi Bassi il diritto di libero esercizio della religione e anche il permesso di costruire chiese pubbliche. Di conseguenza, la cappella fu ampliata di nuovo nel 1835, e la casa originale De Crytberghen fu demolita per far spazio alla chiesa ampliata e alla canonica, che ancora oggi accoglie le sale parrocchiali e i locali della comunità gesuita. Sul frontone dell'ingresso della nuova facciata fu fissato l'acronimo tipico dell'ordine dei Gesuiti IHS.\n\nQuando nel 1853 si restaurò la gerarchia della Chiesa cattolica nei Paesi Bassi, la chiesa De Krijtberg fu assegnata, insieme con la seconda chiesa gesuita a Amsterdam De Saaier, alla diocesi di Haarlem. Il numero crescente di membri della parrocchia sembrò giustificare la costruzione di una chiesa più grande, la quale fu commissionata nel 1879. Il nuovo edificio, a causa del quale diverse case storiche lungo il Singel furono demolite, fu concepito in stile neogotico da Alfred Tepe (1840-1920). Il 3 dicembre 1883 il nuovo Krijtberg fu consacrato dal vescovo di Haarlem.\n\nSiccome il numero dei membri praticanti e, più generalmente, dei cattolici a Amsterdam scese drasticamente negli anni 1960, si considerò di chiudere e anzi di demolire la chiesa. Il vescovo di Haarlem però ritirò i suoi piani di chiusura dopo che la Chiesa fu dichiarata Monumento nazionale dalle autorità municipali nel 1974. In seguito, De Krijtberg fu ampiamente rinnovato; i lavori furono terminati nel 2003. \n\nL'interno, costruito a tre navate, fu arredato secondo i gusti contemporanei con numerosi programmi iconografici che si distinguono fortemente dalla sobrietà delle chiese riformate di Amsterdam per esprimere artisticamente la restaurazione del cattolicesimo nei Paesi Bassi dopo il 1853. Quando l'edificio fu completato, l'interno ricevette, in un primo tempo (1886-89), murali provvisori, sostituiti nel 1892 dai lavori ormai visibili di Martin Schenk (1933-1911).\n\nLe vetrate, l'altare, il baldacchino e numerosi altri elementi d'attrezzatura sono opere della bottega Friedrich Wilhelm Mengelberg di Colonia (Germania), compiute negli anni 1882-1886. Il cancello del coro, che separa la zona dell'altare dallo spazio comunitario, è costruito in legno e si trova al di sopra dell'altare: mostra rappresentazioni dei dodici apostoli ed è sormontato da un Calvario, modellato da Mengelberg secondo l'iconografia medievale. La navata sinistra chiude con una cappella di S. Maria, il cui altare, creato anche lui dallo studio Mengelberg (1885), raffigura scene della vita di Maria.\n\nLe pareti della navata sono dominate di sculture di arenaria che rappresentano gesuiti canonizzati (tra cui Francesco Saverio, Ignazio di Loyola, Alfonso Rodriguez). Anche le vetrate ritraggono santi della Compagnia di Gesù (Pietro Claver, Aloisio Gonzaga, ecc.).\n\nOltre ad un piccolo organo del 1960 (transetto sinistro), la chiesa possiede di un secondo organo dalla bottega Piet J. Adema en Zonen (Amsterdam) del 1905, posto nel 1985 sulla galleria della navata destra. Lo strumento dispone di 33 registri su due manuali e un pedale.\n\nOggi De Krijtberg offre quotidianamente liturgie cattoliche; nel centro parrocchiale adiacente si svolgono durante tutto l'anno servizi di formazione, circoli di lettura, esercizi spirituali e programmi catechetici.",
+          "address": "Singel 446, 1017 AV Amsterdam, Paesi Bassi",
+          "image": "https://amsterdamboatcenter.com/wp-content/uploads/2015/02/Krijtbergkerk.jpg",
+          "coordinates": {
+            "lat": 52.36792,
+            "lon": 4.88832
+          }
+        },
+        {
+          "id": 6,
+          "name": "TFIOS Bench",
+          "description": "Punto panoramico",
+          "address": "Leidsegracht 4, 1016 CK Amsterdam, Paesi Bassi",
+          "image": "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2014/01/the_fault_in_our_stars_4_h.jpg",
+          "coordinates": {
+            "lat": 52.36755,
+            "lon": 4.88615
+          }
+        },
+        {
+          "id": 7,
+          "name": "Houseboat Museum",
+          "description": "Le Houseboat, le case galleggianti di Amsterdam sono delle vere e proprie abitazioni complete di ogni confort che sono ormeggiate lungo il dedalo di canali interni della città. Le case galleggianti di Amsterdam sono poco meno di 2 mila 500, di cui 750 ormeggiate lungo i canali del XVII secolo, e furono introdotte dopo la Seconda Guerra Mondiale sia per far fronte all’esigenza abitativa della città che per smaltire, o meglio riadattare, le vecchie navi da carico della flotta olandese ormai inutilizzate. \n\nQuesti gioiellini high-tech incarnano uno stile di vita raffinato ed elegante che i più romantici potranno sperimentare prendendo una in affitto una casa galleggiante per il loro soggiorno. Al 296 Prinsengracht si trova il museo delle case galleggianti, l’Houseboatmuseum, allestito ovviamente all’interno di un battello.",
+          "address": "Prinsengracht 296K, 1016 HW Amsterdam, Paesi Bassi",
+          "image": "https://www.holland.com/upload_mm/7/d/0/cid25313_fullimage_Woonbootmuseum_5680_492x307.jpg",
+          "coordinates": {
+            "lat": 52.37566,
+            "lon": 4.88441
+          }
+        },
+        {
+          "id": 8,
+          "name": "Torensluis",
+          "description": "Il Torensluis (blocco della torre) sembra un ponte eccessivamente largo sul Singel. La ragione di un così ampio allestimento fu la Jan Roodenpoortstoren (torre) che rimase qui fino al 1829. Le prigioni sotto la torre furono recentemente restaurate e ora sono aperte al pubblico. Sono anche utilizzati per ospitare mostre ed eventi letteralmente sotterranei.",
+          "address": "1012 VK Amsterdam, Paesi Bassi",
+          "image": "https://media-cdn.tripadvisor.com/media/photo-s/12/30/cb/e8/torensluis.jpg",
+          "coordinates": {
+            "lat": 52.374576,
+            "lon": 4.889219
+          }
+        },
+        {
+          "id": 9,
+          "name": "Singel",
+          "description": "Il Singel (anticamente: Cingel, letteralmente \"cintura\", \"fossa\"[1]) – da non confondere con il Singelgracht – è un canale (gracht) e via (su due lati) di Amsterdam, che \"taglia\" in due la parte settentrionale della città: scavato tra il 1428[3] e il 1450, è il più antico e il più interno della cosiddetta \"cerchia dei canali\" (Grachtengordel), a cui - per via della sua \"curva\" - conferisce la caratteristica forma a ferro di cavallo. Fino al XV secolo, segnava i confini della città.\n\nIl Singel delimita il confine orientale e meridionale della Nieuwe Zijde (\"parte nuova\"), il confine meridionale della Oude Zijde (\"parte vecchia\"), il confine orientale della \"Cerchia dei Canali centrale\" e il confine settentrionale della \"Cerchia dei Canali est\" o \"Cerchia dei Canali sud\"). Si trova tra l'Herengracht (\"Canale dei Signori\") e Spuistraat.[2]\n\nScorre dall'IJ fino a Muntplein (la piazza con la celebre Muntoren, la \"torre della zecca\"), dove si getta nell'Amstel e precisamente nel tratto chiamato Binnen Amstel (\"Amstel interno\"). È collegato al Singelgracht tramite il Brouwersgracht (\"Canale dei birrai\").\n\nMolti edifici, specie nella sua parte iniziale, erano in origine dei magazzini adibiti allo stoccaggio delle merci.\n\nQuasi tutti gli edifici con frontone del canale risalgono al periodo compreso tra il 1600 e il 1650. \n\nChiamato in origine Stedegracht[3] (\"canale cittadino\") , fu realizzato a partire dal 1428[3] nell'ambito di un progetto di ampliamento della città, la cui superficie passò da 41 a 79 ettari[1].\n\nInizialmente era stato concepito come via artificiale per il commercio ed il trasporto delle merci e solo in seguito divenne zona residenziale.\n\nNel 1481, furono erette sul lato interno del canale le mura cittadine.\n\nIl canale perse la sua funzione difensiva nel 1586, quando la città di Amsterdam - per difendersi dagli Spagnoli - costruì un terrapieno in corrispondenza dello Herengracht.\n\nDa allora, si iniziarono a costruire così lungo il Singel anche delle abitazioni.\n\nAd inizio 2013, si discusse sull'eventualità di ribattezzare il Singel con il nome Koningsgracht (\"Canale della regina\") in onore di Beatrice dei Paesi Bassi dopo la sua abdicazione, ma la proposta fu rigettata.",
+          "address": "1012 VK Amsterdam, Paesi Bassi",
+          "image": "https://live.staticflickr.com/8191/29224891086_711fee75a8_b.jpg",
+          "coordinates": {
+            "lat": 52.373569,
+            "lon": 4.889298
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "date": "2019-09-05T00:00:00.000Z",
+      "poi": [
+        {
+          "id": 1,
+          "name": "Zaanse Schans",
+          "description": "Con le sue autentiche casette di legno e gli splendidi mulini, sembra un museo a cielo aperto. Ma non lo è perché a Zaanse Schans vivono e lavorano ancora quotidianamente delle persone. Essi fanno in modo che nel borgo si respiri ancora la Rivoluzione Industriale. Artigiani lavorano ancora quotidianamente nei mulini  e nelle diverse botteghe. Visitate la bottega degli zoccoli, la fonderia del peltro, l’azienda agricola casearia o uno dei mulini. Volete fare una pausa? Avete una vasta scelta tra ristoranti e bar che servono specialità olandesi. Desiderate portare a casa un bel ricordo? In uno dei tanti negozi troverete sicuramente un bel souvenir.\n\nCosa fare nei dintorni (Zaanstreek)\nPotete fare di più a Zaanse Schans e nei dintorni. Ad esempio, potete fare un giro in battello, noleggiare delle biciclette o fare un’escursione a piedi lungo uno dei percorsi segnati. In questo modo potrete vedere Zaanse Schans dall’altro lato!",
+          "address": "1509 AW Zaandam, Paesi Bassi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Zaanstad_Zaanse_Schans_22.jpg",
+          "coordinates": {
+            "lat": 52.473224,
+            "lon": 4.821749
+          }
+        },
+        {
+          "id": 2,
+          "name": "Heineken Experience",
+          "description": "Situata a Stadhouderskade, nel quartiere De Pijp, la vecchia fabbrica dell’Heineken è una tappa imperdibile per gli amanti della famosa bionda d’Olanda. Un must per tutti i visitatori di Amsterdam, un’esperienza multisensoriale che vi permetterà di annusare, osservare, toccare ed assaggiare una Heineken in tutti i passaggi del suo processo di fabbricazione.",
+          "address": "Stadhouderskade 78, 1072 AE Amsterdam, Paesi Bassi",
+          "image": "https://static.ticketbar.eu/_1980x1320_/amsterdam/classificaties/attrazioni/heineken-experience-vip/heineke_experience_1680x770-1509086592-1510142879.jpg",
+          "coordinates": {
+            "lat": 52.357971,
+            "lon": 4.891887
+          }
+        },
+        {
+          "id": 3,
+          "name": "Bloemenmarkt",
+          "description": "Qui si trovano ogni sorta di fiore o bulbo, anche delle preziosissime rarità. Proprio su uno dei maggiori canali di Amsterdam, il Singel (tra Muntplein e Koningsplein) c'è l'appuntamento imperdibile con il Bloemenmarkt, il grande mercato dei fiori! La particolarità di questo mercato è che è l'unico mercato dei fiori  galleggiante d'Europa! Si trova infatti su delle chiatte adibite a case galleggianti.\n\n Il Bloemenmarkt risale al 1862 quando i mercanti, per portare i fiori dalla periferia in centro, usavano delle chiatte ed esponevano la loro mercanzia floreale direttamente nel bel mezzo del canale Singel. Questa usanza si è tramandata nel tempo e ancora  oggi è possibile ammirare questo mercato coloratissimo che conquista il cuore di un turista con i suoi colori e profumi.",
+          "address": "Singel, 1012 DH Amsterdam, Paesi Bassi",
+          "image": "http://www.loveamsterdam.it/wp-content/uploads/2019/05/bloenmarkt.jpg",
+          "coordinates": {
+            "lat": 52.366777,
+            "lon": 4.891254
+          }
+        },
+        {
+          "id": 4,
+          "name": "Bridge Of Bridges",
+          "description": "Amsterdam è nota per i suoi canali e ponti - le barche della città sono 165 canali e oltre 1.200 ponti. Uno dei ponti più popolari è noto come il Ponte dei 15 ponti, chiamato come tale perché è l'unico posto ad Amsterdam in cui è possibile vedere fino a 15 dei ponti della città. Mentre è un ottimo posto in qualsiasi momento della giornata, è particolarmente impressionante di notte quando i ponti sono illuminati. È anche considerato uno dei luoghi più romantici di Amsterdam. Per individuare tutti e 15 i ponti, dirigiti verso Thorbeckeplein, che è adiacente a Rembrandtplein. Cammina verso sud fino a Herengracht e, all'incrocio tra Reguliersgracht e Herengracht, si trova sul lato dispari della strada. Con le spalle rivolte a Thorbeckeplein, puoi vedere sei ponti attraverso il Reguliersgracht e guardando giù per Herengracht alla tua sinistra, puoi vedere altri sei ponti. Altri due ponti sono visibili alla tua destra e il 15 ° ponte è quello su cui ti trovi.\n\n",
+          "address": "Herengracht 563, 1017 CS Amsterdam, Paesi Bassi",
+          "image": "https://media-cdn.tripadvisor.com/media/photo-s/0b/de/16/bc/brigde-of-15-brigdes.jpg",
+          "coordinates": {
+            "lat": 52.36508,
+            "lon": 4.89625
+          }
+        },
+        {
+          "id": 5,
+          "name": "Crociera con Blue Boat Company",
+          "description": "Crociera lungo i canali di Amsterdam",
+          "address": "Stadhouderskade 550, opposite the Heineken Experience",
+          "image": "https://cdn.getyourguide.com/img/tour_img-905451-146.jpg",
+          "coordinates": {
+            "lat": 52.35823,
+            "lon": 4.89164
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "date": "2019-09-06T00:00:00.000Z",
+      "poi": [
+        {
+          "id": 1,
+          "name": "Muiderslot",
+          "description": "Il Muiderslot è uno dei castelli medioevali più pittoreschi dell'Olanda. Con la sua lunga e ricca storia, il castello è ora un museo nazionale aperto al pubblico e offre l'occasione di esplorare le sue maestose stanze (restaurate nello stile originale del Seicento) e le sue collezioni di armi e armature.\n\nIl più famoso castello medioevale olandese è il Museo nazionale Muiderslot di Muiden. Questa fortezza alla foce del fiume Vecht fu costruita attorno al 1280 dal Conte Floris V. Subito dopo, nel 1296, il castello venne distrutto dal Vescovo Willem van Mechelen. Nel 1380, il nuovo castello fu costruito sulle rovine di quello precedente. Attualmente, quasi 600 anni più tardi, il castello si trova in condizioni ottimali e ogni anno viene frequentato da migliaia di curiosi visitatori che desiderano immedesimarsi nel ruolo di cavaliere o damigella per un giorno. \n\nIl Muiderslot ha ricoperto la funzione di corte di giustizia, carcere e residenza ufficiale degli abitanti del castello. Tra gli abitanti più famosi ritroviamo l'autore e poeta, P.C. Hooft, un uomo il cui nome molti conoscono e associano all'esclusiva via dello shopping di Amsterdam, la P.C. Hooftstraat. Visse nel castello dal 1609 al 1674. Durante questo periodo, il Muiderslot divenne un importante centro per le scienze e le arti e il luogo di incontro di un gruppo di illustri cittadini conosciuto come il Muiderkring (Circolo di Muider).\n\n",
+          "address": "Herengracht 1, 1398 AA Muiden, Paesi Bassi",
+          "image": "https://cdn.getyourguide.com/img/tour_img-272384-148.jpg",
+          "coordinates": {
+            "lat": 52.33442,
+            "lon": 5.07118
+          }
+        },
+        {
+          "id": 2,
+          "name": "Artis Royal Zoo",
+          "description": "L’Artis Royal Zoo di Amsterdam, in olandese Koninklijk Zoölogisch Genootschap Natura Artis Magistra (citazione che in latino significa “la natura è maestra dell’arte”), è una tra le strutture pubbliche più antiche della città. Fondato nel 1838 da Gerardus Frederik Westerman (1807 – 1890), Johann Wilhelm Heinrich Werlemann (1807 – 1877) e Johannes Wilhelmus Wijsmuller (1806 – 1882), ed è uno dei primi progetti verdi della capitale olandese. Lo zoo di Amsterdam è considerato una delle migliori mete per passeggiare nella natura in mezzo ad alberi secolari e piante, e ammirare animali delle più svariate specie, senza allontanarsi troppo dal centro della città. Ospita infatti non solo 8200 animali di quasi 800 specie diverse, ma anche 200 varietà di piante e alberi, molte delle quali a rischio estinzione.",
+          "address": "Plantage Kerklaan 38-40, 1018 CZ Amsterdam, Paesi Bassi",
+          "image": "https://www.viviamsterdam.it/images/viviamsterdam/Attrazioni/Zoo-Amsterdam-entrata.JPG",
+          "coordinates": {
+            "lat": 52.36696,
+            "lon": 4.91258
+          }
+        },
+        {
+          "id": 3,
+          "name": "NEMO",
+          "description": "NEMO è il più grande centro scientifico dei Paesi Bassi. Si trova ad Amsterdam. Il palazzo che lo ospita è stato progettato dall'architetto italiano Renzo Piano. NEMO si trova vicino alla Stazione Centrale di Amsterdam e al Nederlands Scheepvaartmuseum (Museo Marittimo dei Paesi Bassi)",
+          "address": "Oosterdok 2, 1011 VX Amsterdam, Paesi Bassi",
+          "image": "https://www.amsterdam.info/photos/content/presentation/1484094634-amsterdam-museum-nemo-building.jpg",
+          "coordinates": {
+            "lat": 52.37385,
+            "lon": 4.91211
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "date": "2019-09-07T00:00:00.000Z",
+      "poi": [
+        {
+          "id": 1,
+          "name": "Spiegelkwartier",
+          "description": "Un luogo assolutamente da vedere per gli amanti dell’arte, dell’antiquariato e degli oggetti da collezione: lo Spiegelkwartier (quartiere specchio). In quest’area da ottant’anni si svolge il commercio dell’arte e dell’antiquariato di Amsterdam. Esplorando queste vie della zona vecchia della città, si possono anche raggiungere i famosi musei Rijksmuseum, il Museo van Gogh ed il Museo Allard Pierson – tutti a poca distanza.\n\n Gallerie a volontà\nA Spiegelgracht più di settanta commercianti d’arte specializzati offrono una grande varietà di manufatti: dai ritrovamenti archeologici fino al mobilio del 17˚ secolo, dalla ceramica blu di Delft ai bellissimi pezzi in Art nouveau. Toth Ikonen è la più vecchia galleria di icone di Amsterdam; è specializzata in antiche icone russe, icone da viaggio in ottone e pannelli di legno dipinti (dal 16˚ al 19˚ secolo). Oggetti più antichi possono essere trovati all’Archea Ancient Art, che possiede manufatti risalenti all’antichità greca, egizia, romana ma anche orientale. \n\n Capolavori moderni\nDall’antico al moderno. Se state cercando qualcosa di veramente speciale, allora la Galleria Lieve Hemel saprà ispirarvi sicuramente. Questa galleria propone il meglio dei dipinti del Realismo contemporaneo olandese e dell' arte moderna in argento. State cercando Warhol, Chagall o Karel Appel? Allora la Galleria Delaive è quello che fa per voi. Da più di 30 anni Delaive è specializzato nell'arte moderna e contemporanea, di famosi artisti olandesi ed internazionali. Delaive è anche l’unico rappresentante della Sam Francis Estate in Europa.\n\n Arte e cibo\nArte e cibo camminano l’una affianco all’altro nello Spiegelkwartier. Il ristorante Spelt offre piatti freschi di stagione con un tocco olandese ed ha sempre nuove esposizioni di fotografia sulle sue pareti. Pasta e Basta serve eccellenti piatti italiani con decorazioni veramente fuori dal comune, ma ciò che fa questo posto speciale sono le cameriere ed i camerieri: che cantano durante la vostra cena! Pezzi d’opera, canzoni pop e diversi altri frammenti musicali fanno tutti parte del menù, e vi faranno passare una serata davvero memorabile.\n\n Esplorare in barca o bicicletta\nPer arrivare allo Spiegelkwartier potete prendere il battello Canal Bus (ferma a Rijksmuseum). Un altro modo divertente di viverlo è in bicicletta. Fate come fanno i veri olandesi e scoprite la città da una prospettiva diversa! Uno dei luoghi dove noleggiare bici è Mikes Bike Tours in Kerkstraat: si può affittare una bici ed avventurarsi tra i canali da soli, oppure si può prenotare un tour con Mike – la guida che vi porterà a visitare i posti più interessanti e vi darà tante dritte utili. Ne uscirete con una nuova esperienza della città.\n\n",
+          "address": "1017 DD Amsterdam",
+          "image": "https://www.fleamapket.com/wp-content/uploads/2016/06/1-Spiegelkwartier-Amsterdam.jpg",
+          "coordinates": {
+            "lat": 52.36306,
+            "lon": 4.88849
           }
         }
       ]
     }
+
   ]
 
 }
